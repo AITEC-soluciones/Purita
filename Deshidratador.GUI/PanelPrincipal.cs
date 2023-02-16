@@ -100,6 +100,9 @@ namespace Deshidratador.GUI {
 
         }
 
+        /// <summary>
+        ///     Selecciona un perfil de deshidratación al cambiar el índice de selección en el control correspondiente.
+        /// </summary>
         private void cbPerfilDeshidratacion_SelectedIndexChanged(object sender, EventArgs e) {
             /* Obtener el perfil */
             PerfilSeleccionado = Perfiles.Find(p => p.Nombre.Equals(PerfilesDeshidratacion.SelectedItem.ToString()));
@@ -146,6 +149,10 @@ namespace Deshidratador.GUI {
             PerfilesDeshidratacion.SelectedItem = "Predeterminado";
         }
 
+        /// <summary>
+        ///     Realiza las operaciones correspondientes de habilitación de componentes al seleccionar la
+        ///     edición para un valor de la curva de comportamiento de deshidratación.
+        /// </summary>
         private void cbEditarValores_CheckedChanged(object sender, EventArgs e) {
             /* Habilitacion de componentes */
             nudValorRelacion.Enabled = cbEditarValores.Checked;
@@ -168,6 +175,10 @@ namespace Deshidratador.GUI {
 
         }
 
+        /// <summary>
+        ///     Realiza las operaciones correspondientes al resaltado de valores en la gráfica de comportamiento
+        ///     para curva de deshidratación al moverse entre los distintos puntos de la misma.
+        /// </summary>
         private void nudValorRelacion_ValueChanged(object sender, EventArgs e) {
             /* Resaltar valor a editar en la grafica */
             var valor = (int)nudValorRelacion.Value;
@@ -179,6 +190,10 @@ namespace Deshidratador.GUI {
             tbTemperatura.Text = PerfilSeleccionado.Relaciones[valor].Temperatura.ToString();
         }
 
+        /// <summary>
+        ///     Modifica un valor de la curva de comportamiento de deshidratación y envía al controlador la trama
+        ///     de datos correspondiente.
+        /// </summary>
         private void btnModificar_Click(object sender, EventArgs e) {
             /* Actualizar valor en la grafica */
             var posicion = (int)nudValorRelacion.Value;
@@ -192,13 +207,16 @@ namespace Deshidratador.GUI {
         }
 
         /// <summary>
-        ///     Actualiza los elementos de la interfaz
+        ///     Actualiza los elementos de la interfaz cada 2 segundos una vez conectado al controlador.
         /// </summary>
         private void temporizadorActualizacion_Tick(object sender, EventArgs e) {
+            /* Parada del temporizador por error en la recepción de datos */
             if (_ultimoId != IdTrama.None) {
                 if (_noTrama == 3) {
                     _temporizadorActualizacion.Stop();
                     _noTrama = 0;
+
+                    return;
                 } else
                     _noTrama++;
 
@@ -212,13 +230,14 @@ namespace Deshidratador.GUI {
                 return;
             }                
 
-            /* Parada del temporizador */
+            /* Parada del temporizador por desconexión del puerto */
             if (!_controladorComunicacion.IsOpen) {
                 _temporizadorActualizacion.Stop();
 
                 return;
             }                
 
+            /* Envío de la trama hacia el controlador para obtener los datos que refrescan la interfaz */
             _poolCounter++;
             _ultimoId = IdTrama.Datos;
             _controladorComunicacion.WriteLine($"$AITEC{_direccionModulo}D\r");
@@ -317,11 +336,12 @@ namespace Deshidratador.GUI {
         #region Funciones :
 
         /// <summary>
-        /// 
+        ///     Obtiene el puerto de comunicación activo y encuesta el controlador en la dirección especificada para
+        ///     obtener los datos primarios y comenzar el ciclo de obtención de datos del mismo.
         /// </summary>
-        /// <param name="controladorComunicacion"></param>
-        /// <param name="direccion"></param>
-        /// <param name="nombre"></param>
+        /// <param name="controladorComunicacion">El controlador de comunicación o puerto COM</param>
+        /// <param name="direccion">La dirección del módulo</param>
+        /// <param name="nombre">El nombre del módulo previamente obtenido</param>
         internal void ActualizarParametrosModulo(SerialPort controladorComunicacion, string direccion, string nombre) {
             _controladorComunicacion = controladorComunicacion;
             _direccionModulo = direccion;

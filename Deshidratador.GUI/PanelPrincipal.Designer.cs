@@ -46,29 +46,31 @@
             this.lbVentilador2 = new System.Windows.Forms.Label();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
+            this.controlTemperatura1 = new CustomComponents.Lib.ControlTemperatura();
+            this.controlVentilador2 = new CustomComponents.Lib.ControlVentilador();
             this.layoutDistribucionProceso = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Separator9 = new Guna.UI2.WinForms.Guna2Separator();
             this.lbInicio = new System.Windows.Forms.Label();
-            this.indRegimenSecado = new Guna.UI2.WinForms.Guna2Button();
-            this.btnInicio = new Guna.UI2.WinForms.Guna2Button();
-            this.indRegimenCalentamiento = new Guna.UI2.WinForms.Guna2Button();
-            this.btnStop = new Guna.UI2.WinForms.Guna2Button();
             this.lbRegimenes = new System.Windows.Forms.Label();
             this.guna2Separator8 = new Guna.UI2.WinForms.Guna2Separator();
+            this.btnInicio = new Guna.UI2.WinForms.Guna2Button();
+            this.btnStop = new Guna.UI2.WinForms.Guna2Button();
+            this.indRegimenCalentamiento = new Guna.UI2.WinForms.Guna2Button();
+            this.indRegimenSecado = new Guna.UI2.WinForms.Guna2Button();
             this.indRegimenDrenado = new Guna.UI2.WinForms.Guna2Button();
             this.layoutDistribucionColumna1 = new System.Windows.Forms.TableLayoutPanel();
             this.lbHumedad = new System.Windows.Forms.Label();
             this.lbVentilador1 = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
+            this.controlHumedad1 = new CustomComponents.Lib.ControlHumedad();
+            this.controlVentilador1 = new CustomComponents.Lib.ControlVentilador();
             this.layoutDistribucionVariables = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Separator7 = new Guna.UI2.WinForms.Guna2Separator();
             this.layoutEntradaSalidaAire = new System.Windows.Forms.TableLayoutPanel();
-            this.lbMotorDrenaje = new System.Windows.Forms.Label();
-            this.interruptorExclusaAire = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.interruptorMotorDrenaje = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.interruptorActuadores = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.lbActuadorExclusa = new System.Windows.Forms.Label();
-            this.lbDrenajeAireHumedo = new System.Windows.Forms.Label();
+            this.lbPurgaAireHumedo = new System.Windows.Forms.Label();
             this.lbCurvaTrabajo = new System.Windows.Forms.Label();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.layoutPerfilesDeshidratacion = new System.Windows.Forms.TableLayoutPanel();
@@ -95,15 +97,16 @@
             this.interruptorR5R6 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.interruptorR7R8 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.lbR1R2 = new System.Windows.Forms.Label();
+            this.curvaDeshidratacion = new CustomComponents.Lib.CurvaDeshidratacion();
             this.layoutMenuLateral = new System.Windows.Forms.TableLayoutPanel();
             this.btnPanelModulos = new Guna.UI2.WinForms.Guna2Button();
             this.ArrastrePanel = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this._temporizadorActualizacion = new System.Windows.Forms.Timer(this.components);
-            this.controlTemperatura1 = new CustomComponents.Lib.ControlTemperatura();
-            this.controlHumedad1 = new CustomComponents.Lib.ControlHumedad();
-            this.curvaDeshidratacion = new CustomComponents.Lib.CurvaDeshidratacion();
-            this.controlVentilador1 = new CustomComponents.Lib.ControlVentilador();
-            this.controlVentilador2 = new CustomComponents.Lib.ControlVentilador();
+            this.layoutSeñalesRegimenAutomatico = new System.Windows.Forms.TableLayoutPanel();
+            this.panelSeñales = new Guna.UI2.WinForms.Guna2Panel();
+            this.subLayoutSeñalesRegimenAutomatico = new System.Windows.Forms.TableLayoutPanel();
+            this.btnManual = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAutomatico = new Guna.UI2.WinForms.Guna2Button();
             this.layoutBase.SuspendLayout();
             this.layoutDistribucionBase.SuspendLayout();
             this.layoutTitulo.SuspendLayout();
@@ -121,6 +124,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudValorRelacion)).BeginInit();
             this.layoutResistencias.SuspendLayout();
             this.layoutMenuLateral.SuspendLayout();
+            this.layoutSeñalesRegimenAutomatico.SuspendLayout();
+            this.panelSeñales.SuspendLayout();
+            this.subLayoutSeñalesRegimenAutomatico.SuspendLayout();
             this.SuspendLayout();
             // 
             // EstiloPanel
@@ -428,19 +434,49 @@
             this.guna2Separator5.Size = new System.Drawing.Size(190, 5);
             this.guna2Separator5.TabIndex = 11;
             // 
+            // controlTemperatura1
+            // 
+            this.controlTemperatura1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlTemperatura1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.controlTemperatura1.Location = new System.Drawing.Point(1, 380);
+            this.controlTemperatura1.Margin = new System.Windows.Forms.Padding(1);
+            this.controlTemperatura1.MinimumSize = new System.Drawing.Size(200, 230);
+            this.controlTemperatura1.Name = "controlTemperatura1";
+            this.controlTemperatura1.Size = new System.Drawing.Size(200, 240);
+            this.controlTemperatura1.TabIndex = 13;
+            this.controlTemperatura1.ValorActual = 0F;
+            this.controlTemperatura1.ValorMaximo = 100F;
+            this.controlTemperatura1.ValorMinimo = 0F;
+            // 
+            // controlVentilador2
+            // 
+            this.controlVentilador2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlVentilador2.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.controlVentilador2.Interruptor = false;
+            this.controlVentilador2.Location = new System.Drawing.Point(1, 44);
+            this.controlVentilador2.Margin = new System.Windows.Forms.Padding(1);
+            this.controlVentilador2.MinimumSize = new System.Drawing.Size(200, 260);
+            this.controlVentilador2.Name = "controlVentilador2";
+            this.controlVentilador2.Size = new System.Drawing.Size(200, 260);
+            this.controlVentilador2.TabIndex = 14;
+            this.controlVentilador2.ValorActual = 0F;
+            this.controlVentilador2.ValorMaximo = 100F;
+            this.controlVentilador2.ValorMinimo = 0F;
+            this.controlVentilador2.ValorRealimentacion = 0F;
+            // 
             // layoutDistribucionProceso
             // 
             this.layoutDistribucionProceso.ColumnCount = 1;
             this.layoutDistribucionProceso.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.layoutDistribucionProceso.Controls.Add(this.guna2Separator9, 0, 8);
-            this.layoutDistribucionProceso.Controls.Add(this.lbInicio, 0, 7);
-            this.layoutDistribucionProceso.Controls.Add(this.indRegimenSecado, 0, 4);
-            this.layoutDistribucionProceso.Controls.Add(this.btnInicio, 0, 9);
-            this.layoutDistribucionProceso.Controls.Add(this.indRegimenCalentamiento, 0, 3);
-            this.layoutDistribucionProceso.Controls.Add(this.btnStop, 0, 10);
+            this.layoutDistribucionProceso.Controls.Add(this.guna2Separator9, 0, 7);
+            this.layoutDistribucionProceso.Controls.Add(this.lbInicio, 0, 6);
             this.layoutDistribucionProceso.Controls.Add(this.lbRegimenes, 0, 1);
             this.layoutDistribucionProceso.Controls.Add(this.guna2Separator8, 0, 2);
-            this.layoutDistribucionProceso.Controls.Add(this.indRegimenDrenado, 0, 5);
+            this.layoutDistribucionProceso.Controls.Add(this.btnInicio, 0, 9);
+            this.layoutDistribucionProceso.Controls.Add(this.btnStop, 0, 8);
+            this.layoutDistribucionProceso.Controls.Add(this.layoutSeñalesRegimenAutomatico, 0, 10);
+            this.layoutDistribucionProceso.Controls.Add(this.btnManual, 0, 3);
+            this.layoutDistribucionProceso.Controls.Add(this.btnAutomatico, 0, 4);
             this.layoutDistribucionProceso.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutDistribucionProceso.Location = new System.Drawing.Point(1057, 0);
             this.layoutDistribucionProceso.Margin = new System.Windows.Forms.Padding(5, 0, 5, 10);
@@ -449,22 +485,21 @@
             this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 93F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 93F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 93F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
+            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.layoutDistribucionProceso.Size = new System.Drawing.Size(133, 621);
             this.layoutDistribucionProceso.TabIndex = 1;
             // 
             // guna2Separator9
             // 
             this.guna2Separator9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Separator9.Location = new System.Drawing.Point(5, 360);
+            this.guna2Separator9.Location = new System.Drawing.Point(5, 230);
             this.guna2Separator9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.guna2Separator9.Name = "guna2Separator9";
             this.guna2Separator9.Size = new System.Drawing.Size(123, 5);
@@ -475,39 +510,41 @@
             this.lbInicio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbInicio.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInicio.ForeColor = System.Drawing.Color.DimGray;
-            this.lbInicio.Location = new System.Drawing.Point(3, 332);
+            this.lbInicio.Location = new System.Drawing.Point(3, 202);
             this.lbInicio.Name = "lbInicio";
             this.lbInicio.Size = new System.Drawing.Size(127, 28);
             this.lbInicio.TabIndex = 12;
-            this.lbInicio.Text = "Inicio";
+            this.lbInicio.Text = "Autom.";
             this.lbInicio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // indRegimenSecado
+            // lbRegimenes
             // 
-            this.indRegimenSecado.BorderRadius = 5;
-            this.indRegimenSecado.CheckedState.Parent = this.indRegimenSecado;
-            this.indRegimenSecado.CustomImages.Parent = this.indRegimenSecado;
-            this.indRegimenSecado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.indRegimenSecado.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
-            this.indRegimenSecado.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.indRegimenSecado.ForeColor = System.Drawing.Color.White;
-            this.indRegimenSecado.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
-            this.indRegimenSecado.HoverState.Parent = this.indRegimenSecado;
-            this.indRegimenSecado.Image = ((System.Drawing.Image)(resources.GetObject("indRegimenSecado.Image")));
-            this.indRegimenSecado.ImageSize = new System.Drawing.Size(80, 80);
-            this.indRegimenSecado.Location = new System.Drawing.Point(3, 139);
-            this.indRegimenSecado.Name = "indRegimenSecado";
-            this.indRegimenSecado.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
-            this.indRegimenSecado.ShadowDecoration.Parent = this.indRegimenSecado;
-            this.indRegimenSecado.Size = new System.Drawing.Size(127, 87);
-            this.indRegimenSecado.TabIndex = 2;
+            this.lbRegimenes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbRegimenes.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRegimenes.ForeColor = System.Drawing.Color.DimGray;
+            this.lbRegimenes.Location = new System.Drawing.Point(3, 10);
+            this.lbRegimenes.Name = "lbRegimenes";
+            this.lbRegimenes.Size = new System.Drawing.Size(127, 28);
+            this.lbRegimenes.TabIndex = 8;
+            this.lbRegimenes.Text = "Modo";
+            this.lbRegimenes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2Separator8
+            // 
+            this.guna2Separator8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Separator8.Location = new System.Drawing.Point(5, 38);
+            this.guna2Separator8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.guna2Separator8.Name = "guna2Separator8";
+            this.guna2Separator8.Size = new System.Drawing.Size(123, 5);
+            this.guna2Separator8.TabIndex = 9;
             // 
             // btnInicio
             // 
+            this.btnInicio.Animated = true;
             this.btnInicio.BorderRadius = 5;
-            this.btnInicio.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnInicio.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(113)))));
             this.btnInicio.CheckedState.Parent = this.btnInicio;
+            this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInicio.CustomImages.Parent = this.btnInicio;
             this.btnInicio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnInicio.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
@@ -516,12 +553,34 @@
             this.btnInicio.HoverState.Parent = this.btnInicio;
             this.btnInicio.Image = ((System.Drawing.Image)(resources.GetObject("btnInicio.Image")));
             this.btnInicio.ImageSize = new System.Drawing.Size(80, 80);
-            this.btnInicio.Location = new System.Drawing.Point(3, 368);
+            this.btnInicio.Location = new System.Drawing.Point(3, 313);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.ShadowDecoration.Parent = this.btnInicio;
-            this.btnInicio.Size = new System.Drawing.Size(127, 122);
+            this.btnInicio.Size = new System.Drawing.Size(127, 69);
             this.btnInicio.TabIndex = 0;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            // 
+            // btnStop
+            // 
+            this.btnStop.Animated = true;
+            this.btnStop.BorderRadius = 5;
+            this.btnStop.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
+            this.btnStop.CheckedState.Parent = this.btnStop;
+            this.btnStop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStop.CustomImages.Parent = this.btnStop;
+            this.btnStop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.btnStop.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnStop.ForeColor = System.Drawing.Color.White;
+            this.btnStop.HoverState.Parent = this.btnStop;
+            this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
+            this.btnStop.ImageSize = new System.Drawing.Size(80, 80);
+            this.btnStop.Location = new System.Drawing.Point(3, 238);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.ShadowDecoration.Parent = this.btnStop;
+            this.btnStop.Size = new System.Drawing.Size(127, 69);
+            this.btnStop.TabIndex = 1;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // indRegimenCalentamiento
             // 
@@ -536,55 +595,32 @@
             this.indRegimenCalentamiento.HoverState.Parent = this.indRegimenCalentamiento;
             this.indRegimenCalentamiento.Image = ((System.Drawing.Image)(resources.GetObject("indRegimenCalentamiento.Image")));
             this.indRegimenCalentamiento.ImageSize = new System.Drawing.Size(80, 80);
-            this.indRegimenCalentamiento.Location = new System.Drawing.Point(3, 46);
+            this.indRegimenCalentamiento.Location = new System.Drawing.Point(3, 3);
             this.indRegimenCalentamiento.Name = "indRegimenCalentamiento";
             this.indRegimenCalentamiento.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
             this.indRegimenCalentamiento.ShadowDecoration.Parent = this.indRegimenCalentamiento;
-            this.indRegimenCalentamiento.Size = new System.Drawing.Size(127, 87);
+            this.indRegimenCalentamiento.Size = new System.Drawing.Size(121, 70);
             this.indRegimenCalentamiento.TabIndex = 1;
             // 
-            // btnStop
+            // indRegimenSecado
             // 
-            this.btnStop.BorderRadius = 5;
-            this.btnStop.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnStop.Checked = true;
-            this.btnStop.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
-            this.btnStop.CheckedState.Parent = this.btnStop;
-            this.btnStop.CustomImages.Parent = this.btnStop;
-            this.btnStop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
-            this.btnStop.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnStop.ForeColor = System.Drawing.Color.White;
-            this.btnStop.HoverState.Parent = this.btnStop;
-            this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
-            this.btnStop.ImageSize = new System.Drawing.Size(80, 80);
-            this.btnStop.Location = new System.Drawing.Point(3, 496);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.ShadowDecoration.Parent = this.btnStop;
-            this.btnStop.Size = new System.Drawing.Size(127, 122);
-            this.btnStop.TabIndex = 1;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
-            // 
-            // lbRegimenes
-            // 
-            this.lbRegimenes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbRegimenes.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRegimenes.ForeColor = System.Drawing.Color.DimGray;
-            this.lbRegimenes.Location = new System.Drawing.Point(3, 10);
-            this.lbRegimenes.Name = "lbRegimenes";
-            this.lbRegimenes.Size = new System.Drawing.Size(127, 28);
-            this.lbRegimenes.TabIndex = 8;
-            this.lbRegimenes.Text = "Regímen";
-            this.lbRegimenes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // guna2Separator8
-            // 
-            this.guna2Separator8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Separator8.Location = new System.Drawing.Point(5, 38);
-            this.guna2Separator8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.guna2Separator8.Name = "guna2Separator8";
-            this.guna2Separator8.Size = new System.Drawing.Size(123, 5);
-            this.guna2Separator8.TabIndex = 9;
+            this.indRegimenSecado.BorderRadius = 5;
+            this.indRegimenSecado.CheckedState.Parent = this.indRegimenSecado;
+            this.indRegimenSecado.CustomImages.Parent = this.indRegimenSecado;
+            this.indRegimenSecado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.indRegimenSecado.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.indRegimenSecado.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.indRegimenSecado.ForeColor = System.Drawing.Color.White;
+            this.indRegimenSecado.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.indRegimenSecado.HoverState.Parent = this.indRegimenSecado;
+            this.indRegimenSecado.Image = ((System.Drawing.Image)(resources.GetObject("indRegimenSecado.Image")));
+            this.indRegimenSecado.ImageSize = new System.Drawing.Size(80, 80);
+            this.indRegimenSecado.Location = new System.Drawing.Point(3, 79);
+            this.indRegimenSecado.Name = "indRegimenSecado";
+            this.indRegimenSecado.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.indRegimenSecado.ShadowDecoration.Parent = this.indRegimenSecado;
+            this.indRegimenSecado.Size = new System.Drawing.Size(121, 70);
+            this.indRegimenSecado.TabIndex = 2;
             // 
             // indRegimenDrenado
             // 
@@ -599,11 +635,11 @@
             this.indRegimenDrenado.HoverState.Parent = this.indRegimenDrenado;
             this.indRegimenDrenado.Image = ((System.Drawing.Image)(resources.GetObject("indRegimenDrenado.Image")));
             this.indRegimenDrenado.ImageSize = new System.Drawing.Size(80, 80);
-            this.indRegimenDrenado.Location = new System.Drawing.Point(3, 232);
+            this.indRegimenDrenado.Location = new System.Drawing.Point(3, 155);
             this.indRegimenDrenado.Name = "indRegimenDrenado";
             this.indRegimenDrenado.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
             this.indRegimenDrenado.ShadowDecoration.Parent = this.indRegimenDrenado;
-            this.indRegimenDrenado.Size = new System.Drawing.Size(127, 87);
+            this.indRegimenDrenado.Size = new System.Drawing.Size(121, 72);
             this.indRegimenDrenado.TabIndex = 10;
             // 
             // layoutDistribucionColumna1
@@ -675,13 +711,43 @@
             this.guna2Separator4.Size = new System.Drawing.Size(190, 5);
             this.guna2Separator4.TabIndex = 10;
             // 
+            // controlHumedad1
+            // 
+            this.controlHumedad1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlHumedad1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.controlHumedad1.Location = new System.Drawing.Point(1, 380);
+            this.controlHumedad1.Margin = new System.Windows.Forms.Padding(1);
+            this.controlHumedad1.MinimumSize = new System.Drawing.Size(200, 230);
+            this.controlHumedad1.Name = "controlHumedad1";
+            this.controlHumedad1.Size = new System.Drawing.Size(200, 240);
+            this.controlHumedad1.TabIndex = 12;
+            this.controlHumedad1.ValorActual = 0F;
+            this.controlHumedad1.ValorMaximo = 100F;
+            this.controlHumedad1.ValorMinimo = 0F;
+            // 
+            // controlVentilador1
+            // 
+            this.controlVentilador1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlVentilador1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.controlVentilador1.Interruptor = false;
+            this.controlVentilador1.Location = new System.Drawing.Point(1, 44);
+            this.controlVentilador1.Margin = new System.Windows.Forms.Padding(1);
+            this.controlVentilador1.MinimumSize = new System.Drawing.Size(200, 260);
+            this.controlVentilador1.Name = "controlVentilador1";
+            this.controlVentilador1.Size = new System.Drawing.Size(200, 260);
+            this.controlVentilador1.TabIndex = 13;
+            this.controlVentilador1.ValorActual = 0F;
+            this.controlVentilador1.ValorMaximo = 100F;
+            this.controlVentilador1.ValorMinimo = 0F;
+            this.controlVentilador1.ValorRealimentacion = 0F;
+            // 
             // layoutDistribucionVariables
             // 
             this.layoutDistribucionVariables.ColumnCount = 1;
             this.layoutDistribucionVariables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.layoutDistribucionVariables.Controls.Add(this.guna2Separator7, 0, 6);
             this.layoutDistribucionVariables.Controls.Add(this.layoutEntradaSalidaAire, 0, 7);
-            this.layoutDistribucionVariables.Controls.Add(this.lbDrenajeAireHumedo, 0, 5);
+            this.layoutDistribucionVariables.Controls.Add(this.lbPurgaAireHumedo, 0, 5);
             this.layoutDistribucionVariables.Controls.Add(this.lbCurvaTrabajo, 0, 9);
             this.layoutDistribucionVariables.Controls.Add(this.guna2Separator3, 0, 10);
             this.layoutDistribucionVariables.Controls.Add(this.layoutPerfilesDeshidratacion, 0, 11);
@@ -734,9 +800,7 @@
             this.layoutEntradaSalidaAire.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.layoutEntradaSalidaAire.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.layoutEntradaSalidaAire.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutEntradaSalidaAire.Controls.Add(this.lbMotorDrenaje, 3, 0);
-            this.layoutEntradaSalidaAire.Controls.Add(this.interruptorExclusaAire, 0, 0);
-            this.layoutEntradaSalidaAire.Controls.Add(this.interruptorMotorDrenaje, 2, 0);
+            this.layoutEntradaSalidaAire.Controls.Add(this.interruptorActuadores, 0, 0);
             this.layoutEntradaSalidaAire.Controls.Add(this.lbActuadorExclusa, 1, 0);
             this.layoutEntradaSalidaAire.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutEntradaSalidaAire.Location = new System.Drawing.Point(5, 139);
@@ -747,71 +811,32 @@
             this.layoutEntradaSalidaAire.Size = new System.Drawing.Size(622, 32);
             this.layoutEntradaSalidaAire.TabIndex = 13;
             // 
-            // lbMotorDrenaje
+            // interruptorActuadores
             // 
-            this.lbMotorDrenaje.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbMotorDrenaje.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMotorDrenaje.ForeColor = System.Drawing.Color.DimGray;
-            this.lbMotorDrenaje.Location = new System.Drawing.Point(374, 0);
-            this.lbMotorDrenaje.Name = "lbMotorDrenaje";
-            this.lbMotorDrenaje.Size = new System.Drawing.Size(245, 32);
-            this.lbMotorDrenaje.TabIndex = 8;
-            this.lbMotorDrenaje.Text = "Motor de drenaje";
-            this.lbMotorDrenaje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // interruptorExclusaAire
-            // 
-            this.interruptorExclusaAire.Animated = true;
-            this.interruptorExclusaAire.AutoRoundedCorners = true;
-            this.interruptorExclusaAire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(230)))));
-            this.interruptorExclusaAire.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(35)))), ((int)(((byte)(19)))));
-            this.interruptorExclusaAire.CheckedState.BorderRadius = 12;
-            this.interruptorExclusaAire.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(117)))), ((int)(((byte)(54)))));
-            this.interruptorExclusaAire.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.interruptorExclusaAire.CheckedState.InnerBorderRadius = 8;
-            this.interruptorExclusaAire.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.interruptorExclusaAire.CheckedState.Parent = this.interruptorExclusaAire;
-            this.interruptorExclusaAire.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.interruptorExclusaAire.Location = new System.Drawing.Point(0, 3);
-            this.interruptorExclusaAire.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.interruptorExclusaAire.Name = "interruptorExclusaAire";
-            this.interruptorExclusaAire.ShadowDecoration.Parent = this.interruptorExclusaAire;
-            this.interruptorExclusaAire.Size = new System.Drawing.Size(60, 26);
-            this.interruptorExclusaAire.TabIndex = 3;
-            this.interruptorExclusaAire.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(176)))), ((int)(((byte)(161)))));
-            this.interruptorExclusaAire.UncheckedState.BorderRadius = 12;
-            this.interruptorExclusaAire.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
-            this.interruptorExclusaAire.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.interruptorExclusaAire.UncheckedState.InnerBorderRadius = 8;
-            this.interruptorExclusaAire.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.interruptorExclusaAire.UncheckedState.Parent = this.interruptorExclusaAire;
-            // 
-            // interruptorMotorDrenaje
-            // 
-            this.interruptorMotorDrenaje.Animated = true;
-            this.interruptorMotorDrenaje.AutoRoundedCorners = true;
-            this.interruptorMotorDrenaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(230)))));
-            this.interruptorMotorDrenaje.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(35)))), ((int)(((byte)(19)))));
-            this.interruptorMotorDrenaje.CheckedState.BorderRadius = 12;
-            this.interruptorMotorDrenaje.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(117)))), ((int)(((byte)(54)))));
-            this.interruptorMotorDrenaje.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.interruptorMotorDrenaje.CheckedState.InnerBorderRadius = 8;
-            this.interruptorMotorDrenaje.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.interruptorMotorDrenaje.CheckedState.Parent = this.interruptorMotorDrenaje;
-            this.interruptorMotorDrenaje.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.interruptorMotorDrenaje.Location = new System.Drawing.Point(311, 3);
-            this.interruptorMotorDrenaje.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.interruptorMotorDrenaje.Name = "interruptorMotorDrenaje";
-            this.interruptorMotorDrenaje.ShadowDecoration.Parent = this.interruptorMotorDrenaje;
-            this.interruptorMotorDrenaje.Size = new System.Drawing.Size(60, 26);
-            this.interruptorMotorDrenaje.TabIndex = 4;
-            this.interruptorMotorDrenaje.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(176)))), ((int)(((byte)(161)))));
-            this.interruptorMotorDrenaje.UncheckedState.BorderRadius = 12;
-            this.interruptorMotorDrenaje.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
-            this.interruptorMotorDrenaje.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.interruptorMotorDrenaje.UncheckedState.InnerBorderRadius = 8;
-            this.interruptorMotorDrenaje.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.interruptorMotorDrenaje.UncheckedState.Parent = this.interruptorMotorDrenaje;
+            this.interruptorActuadores.Animated = true;
+            this.interruptorActuadores.AutoRoundedCorners = true;
+            this.interruptorActuadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(236)))), ((int)(((byte)(230)))));
+            this.interruptorActuadores.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(35)))), ((int)(((byte)(19)))));
+            this.interruptorActuadores.CheckedState.BorderRadius = 12;
+            this.interruptorActuadores.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(117)))), ((int)(((byte)(54)))));
+            this.interruptorActuadores.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.interruptorActuadores.CheckedState.InnerBorderRadius = 8;
+            this.interruptorActuadores.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.interruptorActuadores.CheckedState.Parent = this.interruptorActuadores;
+            this.interruptorActuadores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.interruptorActuadores.Location = new System.Drawing.Point(0, 3);
+            this.interruptorActuadores.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.interruptorActuadores.Name = "interruptorActuadores";
+            this.interruptorActuadores.ShadowDecoration.Parent = this.interruptorActuadores;
+            this.interruptorActuadores.Size = new System.Drawing.Size(60, 26);
+            this.interruptorActuadores.TabIndex = 3;
+            this.interruptorActuadores.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(176)))), ((int)(((byte)(161)))));
+            this.interruptorActuadores.UncheckedState.BorderRadius = 12;
+            this.interruptorActuadores.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.interruptorActuadores.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.interruptorActuadores.UncheckedState.InnerBorderRadius = 8;
+            this.interruptorActuadores.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.interruptorActuadores.UncheckedState.Parent = this.interruptorActuadores;
             // 
             // lbActuadorExclusa
             // 
@@ -822,20 +847,20 @@
             this.lbActuadorExclusa.Name = "lbActuadorExclusa";
             this.lbActuadorExclusa.Size = new System.Drawing.Size(245, 32);
             this.lbActuadorExclusa.TabIndex = 7;
-            this.lbActuadorExclusa.Text = "Exclusa de aire";
+            this.lbActuadorExclusa.Text = "Actuadores";
             this.lbActuadorExclusa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbDrenajeAireHumedo
+            // lbPurgaAireHumedo
             // 
-            this.lbDrenajeAireHumedo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbDrenajeAireHumedo.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDrenajeAireHumedo.ForeColor = System.Drawing.Color.DimGray;
-            this.lbDrenajeAireHumedo.Location = new System.Drawing.Point(3, 106);
-            this.lbDrenajeAireHumedo.Name = "lbDrenajeAireHumedo";
-            this.lbDrenajeAireHumedo.Size = new System.Drawing.Size(626, 28);
-            this.lbDrenajeAireHumedo.TabIndex = 7;
-            this.lbDrenajeAireHumedo.Text = "Drenaje de aire húmedo";
-            this.lbDrenajeAireHumedo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbPurgaAireHumedo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbPurgaAireHumedo.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPurgaAireHumedo.ForeColor = System.Drawing.Color.DimGray;
+            this.lbPurgaAireHumedo.Location = new System.Drawing.Point(3, 106);
+            this.lbPurgaAireHumedo.Name = "lbPurgaAireHumedo";
+            this.lbPurgaAireHumedo.Size = new System.Drawing.Size(626, 28);
+            this.lbPurgaAireHumedo.TabIndex = 7;
+            this.lbPurgaAireHumedo.Text = "Purga de aire húmedo";
+            this.lbPurgaAireHumedo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbCurvaTrabajo
             // 
@@ -892,6 +917,7 @@
             // 
             // btnCrearPerfil
             // 
+            this.btnCrearPerfil.Animated = true;
             this.btnCrearPerfil.BorderRadius = 5;
             this.btnCrearPerfil.CheckedState.Parent = this.btnCrearPerfil;
             this.btnCrearPerfil.CustomImages.Parent = this.btnCrearPerfil;
@@ -932,6 +958,7 @@
             // 
             // btnEliminarPerfil
             // 
+            this.btnEliminarPerfil.Animated = true;
             this.btnEliminarPerfil.BorderRadius = 5;
             this.btnEliminarPerfil.CheckedState.Parent = this.btnEliminarPerfil;
             this.btnEliminarPerfil.CustomImages.Parent = this.btnEliminarPerfil;
@@ -1023,6 +1050,7 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.Animated = true;
             this.btnModificar.BorderRadius = 5;
             this.btnModificar.CheckedState.Parent = this.btnModificar;
             this.btnModificar.CustomImages.Parent = this.btnModificar;
@@ -1327,6 +1355,39 @@
             this.lbR1R2.Text = "R1 | R2";
             this.lbR1R2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // curvaDeshidratacion
+            // 
+            this.curvaDeshidratacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.curvaDeshidratacion.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.curvaDeshidratacion.Location = new System.Drawing.Point(1, 311);
+            this.curvaDeshidratacion.Margin = new System.Windows.Forms.Padding(1);
+            this.curvaDeshidratacion.Name = "curvaDeshidratacion";
+            this.curvaDeshidratacion.Size = new System.Drawing.Size(630, 309);
+            this.curvaDeshidratacion.TabIndex = 14;
+            this.curvaDeshidratacion.ValorHumedad1 = 0F;
+            this.curvaDeshidratacion.ValorHumedad10 = 0F;
+            this.curvaDeshidratacion.ValorHumedad2 = 0F;
+            this.curvaDeshidratacion.ValorHumedad3 = 0F;
+            this.curvaDeshidratacion.ValorHumedad4 = 0F;
+            this.curvaDeshidratacion.ValorHumedad5 = 0F;
+            this.curvaDeshidratacion.ValorHumedad6 = 0F;
+            this.curvaDeshidratacion.ValorHumedad7 = 0F;
+            this.curvaDeshidratacion.ValorHumedad8 = 0F;
+            this.curvaDeshidratacion.ValorHumedad9 = 0F;
+            this.curvaDeshidratacion.ValorHumedadActual = 0F;
+            this.curvaDeshidratacion.ValorSeleccionado = -1;
+            this.curvaDeshidratacion.ValorTemperatura1 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura10 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura2 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura3 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura4 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura5 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura6 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura7 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura8 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura9 = 0F;
+            this.curvaDeshidratacion.ValorTemperaturaActual = 0F;
+            // 
             // layoutMenuLateral
             // 
             this.layoutMenuLateral.ColumnCount = 1;
@@ -1373,98 +1434,94 @@
             this._temporizadorActualizacion.Interval = 2000;
             this._temporizadorActualizacion.Tick += new System.EventHandler(this.temporizadorActualizacion_Tick);
             // 
-            // controlTemperatura1
+            // layoutSeñalesRegimenAutomatico
             // 
-            this.controlTemperatura1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlTemperatura1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.controlTemperatura1.Location = new System.Drawing.Point(1, 380);
-            this.controlTemperatura1.Margin = new System.Windows.Forms.Padding(1);
-            this.controlTemperatura1.MinimumSize = new System.Drawing.Size(200, 230);
-            this.controlTemperatura1.Name = "controlTemperatura1";
-            this.controlTemperatura1.Size = new System.Drawing.Size(200, 240);
-            this.controlTemperatura1.TabIndex = 13;
-            this.controlTemperatura1.ValorActual = 0F;
-            this.controlTemperatura1.ValorMaximo = 100F;
-            this.controlTemperatura1.ValorMinimo = 0F;
+            this.layoutSeñalesRegimenAutomatico.ColumnCount = 1;
+            this.layoutSeñalesRegimenAutomatico.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.layoutSeñalesRegimenAutomatico.Controls.Add(this.panelSeñales, 0, 0);
+            this.layoutSeñalesRegimenAutomatico.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutSeñalesRegimenAutomatico.Location = new System.Drawing.Point(0, 385);
+            this.layoutSeñalesRegimenAutomatico.Margin = new System.Windows.Forms.Padding(0);
+            this.layoutSeñalesRegimenAutomatico.Name = "layoutSeñalesRegimenAutomatico";
+            this.layoutSeñalesRegimenAutomatico.RowCount = 1;
+            this.layoutSeñalesRegimenAutomatico.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.layoutSeñalesRegimenAutomatico.Size = new System.Drawing.Size(133, 236);
+            this.layoutSeñalesRegimenAutomatico.TabIndex = 8;
             // 
-            // controlHumedad1
+            // panelSeñales
             // 
-            this.controlHumedad1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlHumedad1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.controlHumedad1.Location = new System.Drawing.Point(1, 380);
-            this.controlHumedad1.Margin = new System.Windows.Forms.Padding(1);
-            this.controlHumedad1.MinimumSize = new System.Drawing.Size(200, 230);
-            this.controlHumedad1.Name = "controlHumedad1";
-            this.controlHumedad1.Size = new System.Drawing.Size(200, 240);
-            this.controlHumedad1.TabIndex = 12;
-            this.controlHumedad1.ValorActual = 0F;
-            this.controlHumedad1.ValorMaximo = 100F;
-            this.controlHumedad1.ValorMinimo = 0F;
+            this.panelSeñales.BorderRadius = 5;
+            this.panelSeñales.Controls.Add(this.subLayoutSeñalesRegimenAutomatico);
+            this.panelSeñales.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSeñales.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.panelSeñales.Location = new System.Drawing.Point(3, 3);
+            this.panelSeñales.Name = "panelSeñales";
+            this.panelSeñales.ShadowDecoration.Parent = this.panelSeñales;
+            this.panelSeñales.Size = new System.Drawing.Size(127, 230);
+            this.panelSeñales.TabIndex = 8;
             // 
-            // curvaDeshidratacion
+            // subLayoutSeñalesRegimenAutomatico
             // 
-            this.curvaDeshidratacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.curvaDeshidratacion.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.curvaDeshidratacion.Location = new System.Drawing.Point(1, 311);
-            this.curvaDeshidratacion.Margin = new System.Windows.Forms.Padding(1);
-            this.curvaDeshidratacion.Name = "curvaDeshidratacion";
-            this.curvaDeshidratacion.Size = new System.Drawing.Size(630, 309);
-            this.curvaDeshidratacion.TabIndex = 14;
-            this.curvaDeshidratacion.ValorHumedad1 = 0F;
-            this.curvaDeshidratacion.ValorHumedad10 = 0F;
-            this.curvaDeshidratacion.ValorHumedad2 = 0F;
-            this.curvaDeshidratacion.ValorHumedad3 = 0F;
-            this.curvaDeshidratacion.ValorHumedad4 = 0F;
-            this.curvaDeshidratacion.ValorHumedad5 = 0F;
-            this.curvaDeshidratacion.ValorHumedad6 = 0F;
-            this.curvaDeshidratacion.ValorHumedad7 = 0F;
-            this.curvaDeshidratacion.ValorHumedad8 = 0F;
-            this.curvaDeshidratacion.ValorHumedad9 = 0F;
-            this.curvaDeshidratacion.ValorHumedadActual = 0F;
-            this.curvaDeshidratacion.ValorSeleccionado = -1;
-            this.curvaDeshidratacion.ValorTemperatura1 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura10 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura2 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura3 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura4 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura5 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura6 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura7 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura8 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura9 = 0F;
-            this.curvaDeshidratacion.ValorTemperaturaActual = 0F;
+            this.subLayoutSeñalesRegimenAutomatico.BackColor = System.Drawing.Color.Transparent;
+            this.subLayoutSeñalesRegimenAutomatico.ColumnCount = 1;
+            this.subLayoutSeñalesRegimenAutomatico.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.subLayoutSeñalesRegimenAutomatico.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.subLayoutSeñalesRegimenAutomatico.Controls.Add(this.indRegimenCalentamiento, 0, 0);
+            this.subLayoutSeñalesRegimenAutomatico.Controls.Add(this.indRegimenSecado, 0, 1);
+            this.subLayoutSeñalesRegimenAutomatico.Controls.Add(this.indRegimenDrenado, 0, 2);
+            this.subLayoutSeñalesRegimenAutomatico.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subLayoutSeñalesRegimenAutomatico.Location = new System.Drawing.Point(0, 0);
+            this.subLayoutSeñalesRegimenAutomatico.Name = "subLayoutSeñalesRegimenAutomatico";
+            this.subLayoutSeñalesRegimenAutomatico.RowCount = 3;
+            this.subLayoutSeñalesRegimenAutomatico.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.subLayoutSeñalesRegimenAutomatico.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.subLayoutSeñalesRegimenAutomatico.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.subLayoutSeñalesRegimenAutomatico.Size = new System.Drawing.Size(127, 230);
+            this.subLayoutSeñalesRegimenAutomatico.TabIndex = 8;
             // 
-            // controlVentilador1
+            // btnManual
             // 
-            this.controlVentilador1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlVentilador1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.controlVentilador1.Interruptor = false;
-            this.controlVentilador1.Location = new System.Drawing.Point(1, 44);
-            this.controlVentilador1.Margin = new System.Windows.Forms.Padding(1);
-            this.controlVentilador1.MinimumSize = new System.Drawing.Size(200, 260);
-            this.controlVentilador1.Name = "controlVentilador1";
-            this.controlVentilador1.Size = new System.Drawing.Size(200, 260);
-            this.controlVentilador1.TabIndex = 13;
-            this.controlVentilador1.ValorActual = 0F;
-            this.controlVentilador1.ValorMaximo = 100F;
-            this.controlVentilador1.ValorMinimo = 0F;
-            this.controlVentilador1.ValorRealimentacion = 0F;
+            this.btnManual.Animated = true;
+            this.btnManual.BorderRadius = 5;
+            this.btnManual.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnManual.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(113)))));
+            this.btnManual.CheckedState.Parent = this.btnManual;
+            this.btnManual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManual.CustomImages.Parent = this.btnManual;
+            this.btnManual.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnManual.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.btnManual.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnManual.ForeColor = System.Drawing.Color.White;
+            this.btnManual.HoverState.Parent = this.btnManual;
+            this.btnManual.Image = ((System.Drawing.Image)(resources.GetObject("btnManual.Image")));
+            this.btnManual.ImageSize = new System.Drawing.Size(80, 80);
+            this.btnManual.Location = new System.Drawing.Point(3, 46);
+            this.btnManual.Name = "btnManual";
+            this.btnManual.ShadowDecoration.Parent = this.btnManual;
+            this.btnManual.Size = new System.Drawing.Size(127, 70);
+            this.btnManual.TabIndex = 13;
             // 
-            // controlVentilador2
+            // btnAutomatico
             // 
-            this.controlVentilador2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlVentilador2.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.controlVentilador2.Interruptor = false;
-            this.controlVentilador2.Location = new System.Drawing.Point(1, 44);
-            this.controlVentilador2.Margin = new System.Windows.Forms.Padding(1);
-            this.controlVentilador2.MinimumSize = new System.Drawing.Size(200, 260);
-            this.controlVentilador2.Name = "controlVentilador2";
-            this.controlVentilador2.Size = new System.Drawing.Size(200, 260);
-            this.controlVentilador2.TabIndex = 14;
-            this.controlVentilador2.ValorActual = 0F;
-            this.controlVentilador2.ValorMaximo = 100F;
-            this.controlVentilador2.ValorMinimo = 0F;
-            this.controlVentilador2.ValorRealimentacion = 0F;
+            this.btnAutomatico.Animated = true;
+            this.btnAutomatico.BorderRadius = 5;
+            this.btnAutomatico.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnAutomatico.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(113)))));
+            this.btnAutomatico.CheckedState.Parent = this.btnAutomatico;
+            this.btnAutomatico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAutomatico.CustomImages.Parent = this.btnAutomatico;
+            this.btnAutomatico.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAutomatico.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.btnAutomatico.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAutomatico.ForeColor = System.Drawing.Color.White;
+            this.btnAutomatico.HoverState.Parent = this.btnAutomatico;
+            this.btnAutomatico.Image = ((System.Drawing.Image)(resources.GetObject("btnAutomatico.Image")));
+            this.btnAutomatico.ImageSize = new System.Drawing.Size(80, 80);
+            this.btnAutomatico.Location = new System.Drawing.Point(3, 122);
+            this.btnAutomatico.Name = "btnAutomatico";
+            this.btnAutomatico.ShadowDecoration.Parent = this.btnAutomatico;
+            this.btnAutomatico.Size = new System.Drawing.Size(127, 69);
+            this.btnAutomatico.TabIndex = 14;
             // 
             // PanelPrincipal
             // 
@@ -1472,7 +1529,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 740);
             this.Controls.Add(this.layoutBase);
-            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -1498,6 +1554,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudValorRelacion)).EndInit();
             this.layoutResistencias.ResumeLayout(false);
             this.layoutMenuLateral.ResumeLayout(false);
+            this.layoutSeñalesRegimenAutomatico.ResumeLayout(false);
+            this.panelSeñales.ResumeLayout(false);
+            this.subLayoutSeñalesRegimenAutomatico.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1547,12 +1606,10 @@
         private System.Windows.Forms.Label lbR5R6;
         private System.Windows.Forms.Label lbR3R4;
         private System.Windows.Forms.Label lbR1R2;
-        private System.Windows.Forms.Label lbDrenajeAireHumedo;
+        private System.Windows.Forms.Label lbPurgaAireHumedo;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator7;
         private System.Windows.Forms.TableLayoutPanel layoutEntradaSalidaAire;
-        private System.Windows.Forms.Label lbMotorDrenaje;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch interruptorExclusaAire;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch interruptorMotorDrenaje;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch interruptorActuadores;
         private System.Windows.Forms.Label lbActuadorExclusa;
         private System.Windows.Forms.TableLayoutPanel layoutDistribucionProceso;
         private Guna.UI2.WinForms.Guna2Button btnInicio;
@@ -1583,5 +1640,10 @@
         private System.Windows.Forms.Label lbTrama;
         private CustomComponents.Lib.ControlVentilador controlVentilador2;
         private CustomComponents.Lib.ControlVentilador controlVentilador1;
+        private System.Windows.Forms.TableLayoutPanel layoutSeñalesRegimenAutomatico;
+        private Guna.UI2.WinForms.Guna2Panel panelSeñales;
+        private System.Windows.Forms.TableLayoutPanel subLayoutSeñalesRegimenAutomatico;
+        private Guna.UI2.WinForms.Guna2Button btnManual;
+        private Guna.UI2.WinForms.Guna2Button btnAutomatico;
     }
 }
