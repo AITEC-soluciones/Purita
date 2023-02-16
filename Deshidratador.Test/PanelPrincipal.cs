@@ -46,7 +46,7 @@ namespace Deshidratador.Test {
                                 $"{tbTemperatura.Value.ToString("0.0", CultureInfo.InvariantCulture)}>" +
                                 $"{tbHumedad.Value.ToString("0.0", CultureInfo.InvariantCulture)}>" +
                                 $"01101000>" +
-                                $"00000001\r");
+                                $"00000000\r");
                             break;
                         default:
                             break;

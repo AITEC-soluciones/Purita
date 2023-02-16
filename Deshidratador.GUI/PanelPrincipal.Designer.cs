@@ -46,28 +46,29 @@
             this.lbVentilador2 = new System.Windows.Forms.Label();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
-            this.controlTemperatura1 = new CustomComponents.Lib.ControlTemperatura();
-            this.controlVentilador2 = new CustomComponents.Lib.ControlVentilador();
-            this.layoutDistribucionProceso = new System.Windows.Forms.TableLayoutPanel();
+            this.layoutDistribucionColumna4 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Separator9 = new Guna.UI2.WinForms.Guna2Separator();
             this.lbInicio = new System.Windows.Forms.Label();
             this.lbRegimenes = new System.Windows.Forms.Label();
             this.guna2Separator8 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnInicio = new Guna.UI2.WinForms.Guna2Button();
             this.btnStop = new Guna.UI2.WinForms.Guna2Button();
+            this.layoutSeñalesRegimenAutomatico = new System.Windows.Forms.TableLayoutPanel();
+            this.panelSeñales = new Guna.UI2.WinForms.Guna2Panel();
+            this.subLayoutSeñalesRegimenAutomatico = new System.Windows.Forms.TableLayoutPanel();
             this.indRegimenCalentamiento = new Guna.UI2.WinForms.Guna2Button();
             this.indRegimenSecado = new Guna.UI2.WinForms.Guna2Button();
-            this.indRegimenDrenado = new Guna.UI2.WinForms.Guna2Button();
+            this.indRegimenPurga = new Guna.UI2.WinForms.Guna2Button();
+            this.btnManual = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAutomatico = new Guna.UI2.WinForms.Guna2Button();
             this.layoutDistribucionColumna1 = new System.Windows.Forms.TableLayoutPanel();
             this.lbHumedad = new System.Windows.Forms.Label();
             this.lbVentilador1 = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
-            this.controlHumedad1 = new CustomComponents.Lib.ControlHumedad();
-            this.controlVentilador1 = new CustomComponents.Lib.ControlVentilador();
-            this.layoutDistribucionVariables = new System.Windows.Forms.TableLayoutPanel();
+            this.layoutDistribucionColumna3 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Separator7 = new Guna.UI2.WinForms.Guna2Separator();
-            this.layoutEntradaSalidaAire = new System.Windows.Forms.TableLayoutPanel();
+            this.layoutPurgaAireHumedo = new System.Windows.Forms.TableLayoutPanel();
             this.interruptorActuadores = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.lbActuadorExclusa = new System.Windows.Forms.Label();
             this.lbPurgaAireHumedo = new System.Windows.Forms.Label();
@@ -76,9 +77,9 @@
             this.layoutPerfilesDeshidratacion = new System.Windows.Forms.TableLayoutPanel();
             this.lbSeleccionPerfil = new System.Windows.Forms.Label();
             this.btnCrearPerfil = new Guna.UI2.WinForms.Guna2Button();
-            this.PerfilesDeshidratacion = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbPerfilesDeshidratacion = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnEliminarPerfil = new Guna.UI2.WinForms.Guna2Button();
-            this.layoutValoresPerfil = new System.Windows.Forms.TableLayoutPanel();
+            this.layoutValoresPerfilDeshidratacion = new System.Windows.Forms.TableLayoutPanel();
             this.lbGrados = new System.Windows.Forms.Label();
             this.lbPorciento = new System.Windows.Forms.Label();
             this.cbEditarValores = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -97,16 +98,15 @@
             this.interruptorR5R6 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.interruptorR7R8 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.lbR1R2 = new System.Windows.Forms.Label();
-            this.curvaDeshidratacion = new CustomComponents.Lib.CurvaDeshidratacion();
             this.layoutMenuLateral = new System.Windows.Forms.TableLayoutPanel();
             this.btnPanelModulos = new Guna.UI2.WinForms.Guna2Button();
             this.ArrastrePanel = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this._temporizadorActualizacion = new System.Windows.Forms.Timer(this.components);
-            this.layoutSeñalesRegimenAutomatico = new System.Windows.Forms.TableLayoutPanel();
-            this.panelSeñales = new Guna.UI2.WinForms.Guna2Panel();
-            this.subLayoutSeñalesRegimenAutomatico = new System.Windows.Forms.TableLayoutPanel();
-            this.btnManual = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAutomatico = new Guna.UI2.WinForms.Guna2Button();
+            this.controlTemperatura1 = new CustomComponents.Lib.ControlTemperatura();
+            this.controlHumedad1 = new CustomComponents.Lib.ControlHumedad();
+            this.curvaDeshidratacion = new CustomComponents.Lib.CurvaDeshidratacion();
+            this.controlVentilador2 = new CustomComponents.Lib.ControlVentilador();
+            this.controlVentilador1 = new CustomComponents.Lib.ControlVentilador();
             this.layoutBase.SuspendLayout();
             this.layoutDistribucionBase.SuspendLayout();
             this.layoutTitulo.SuspendLayout();
@@ -115,18 +115,18 @@
             this.layoutAplicacion.SuspendLayout();
             this.layoutDistribucionComponentes.SuspendLayout();
             this.layoutDistribucionColumna2.SuspendLayout();
-            this.layoutDistribucionProceso.SuspendLayout();
-            this.layoutDistribucionColumna1.SuspendLayout();
-            this.layoutDistribucionVariables.SuspendLayout();
-            this.layoutEntradaSalidaAire.SuspendLayout();
-            this.layoutPerfilesDeshidratacion.SuspendLayout();
-            this.layoutValoresPerfil.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudValorRelacion)).BeginInit();
-            this.layoutResistencias.SuspendLayout();
-            this.layoutMenuLateral.SuspendLayout();
+            this.layoutDistribucionColumna4.SuspendLayout();
             this.layoutSeñalesRegimenAutomatico.SuspendLayout();
             this.panelSeñales.SuspendLayout();
             this.subLayoutSeñalesRegimenAutomatico.SuspendLayout();
+            this.layoutDistribucionColumna1.SuspendLayout();
+            this.layoutDistribucionColumna3.SuspendLayout();
+            this.layoutPurgaAireHumedo.SuspendLayout();
+            this.layoutPerfilesDeshidratacion.SuspendLayout();
+            this.layoutValoresPerfilDeshidratacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudValorRelacion)).BeginInit();
+            this.layoutResistencias.SuspendLayout();
+            this.layoutMenuLateral.SuspendLayout();
             this.SuspendLayout();
             // 
             // EstiloPanel
@@ -353,9 +353,9 @@
             this.layoutDistribucionComponentes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 632F));
             this.layoutDistribucionComponentes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.layoutDistribucionComponentes.Controls.Add(this.layoutDistribucionColumna2, 1, 0);
-            this.layoutDistribucionComponentes.Controls.Add(this.layoutDistribucionProceso, 4, 0);
+            this.layoutDistribucionComponentes.Controls.Add(this.layoutDistribucionColumna4, 4, 0);
             this.layoutDistribucionComponentes.Controls.Add(this.layoutDistribucionColumna1, 0, 0);
-            this.layoutDistribucionComponentes.Controls.Add(this.layoutDistribucionVariables, 3, 0);
+            this.layoutDistribucionComponentes.Controls.Add(this.layoutDistribucionColumna3, 3, 0);
             this.layoutDistribucionComponentes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutDistribucionComponentes.Location = new System.Drawing.Point(51, 1);
             this.layoutDistribucionComponentes.Margin = new System.Windows.Forms.Padding(1);
@@ -434,67 +434,37 @@
             this.guna2Separator5.Size = new System.Drawing.Size(190, 5);
             this.guna2Separator5.TabIndex = 11;
             // 
-            // controlTemperatura1
+            // layoutDistribucionColumna4
             // 
-            this.controlTemperatura1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlTemperatura1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.controlTemperatura1.Location = new System.Drawing.Point(1, 380);
-            this.controlTemperatura1.Margin = new System.Windows.Forms.Padding(1);
-            this.controlTemperatura1.MinimumSize = new System.Drawing.Size(200, 230);
-            this.controlTemperatura1.Name = "controlTemperatura1";
-            this.controlTemperatura1.Size = new System.Drawing.Size(200, 240);
-            this.controlTemperatura1.TabIndex = 13;
-            this.controlTemperatura1.ValorActual = 0F;
-            this.controlTemperatura1.ValorMaximo = 100F;
-            this.controlTemperatura1.ValorMinimo = 0F;
-            // 
-            // controlVentilador2
-            // 
-            this.controlVentilador2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlVentilador2.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.controlVentilador2.Interruptor = false;
-            this.controlVentilador2.Location = new System.Drawing.Point(1, 44);
-            this.controlVentilador2.Margin = new System.Windows.Forms.Padding(1);
-            this.controlVentilador2.MinimumSize = new System.Drawing.Size(200, 260);
-            this.controlVentilador2.Name = "controlVentilador2";
-            this.controlVentilador2.Size = new System.Drawing.Size(200, 260);
-            this.controlVentilador2.TabIndex = 14;
-            this.controlVentilador2.ValorActual = 0F;
-            this.controlVentilador2.ValorMaximo = 100F;
-            this.controlVentilador2.ValorMinimo = 0F;
-            this.controlVentilador2.ValorRealimentacion = 0F;
-            // 
-            // layoutDistribucionProceso
-            // 
-            this.layoutDistribucionProceso.ColumnCount = 1;
-            this.layoutDistribucionProceso.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.layoutDistribucionProceso.Controls.Add(this.guna2Separator9, 0, 7);
-            this.layoutDistribucionProceso.Controls.Add(this.lbInicio, 0, 6);
-            this.layoutDistribucionProceso.Controls.Add(this.lbRegimenes, 0, 1);
-            this.layoutDistribucionProceso.Controls.Add(this.guna2Separator8, 0, 2);
-            this.layoutDistribucionProceso.Controls.Add(this.btnInicio, 0, 9);
-            this.layoutDistribucionProceso.Controls.Add(this.btnStop, 0, 8);
-            this.layoutDistribucionProceso.Controls.Add(this.layoutSeñalesRegimenAutomatico, 0, 10);
-            this.layoutDistribucionProceso.Controls.Add(this.btnManual, 0, 3);
-            this.layoutDistribucionProceso.Controls.Add(this.btnAutomatico, 0, 4);
-            this.layoutDistribucionProceso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutDistribucionProceso.Location = new System.Drawing.Point(1057, 0);
-            this.layoutDistribucionProceso.Margin = new System.Windows.Forms.Padding(5, 0, 5, 10);
-            this.layoutDistribucionProceso.Name = "layoutDistribucionProceso";
-            this.layoutDistribucionProceso.RowCount = 11;
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.layoutDistribucionProceso.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.layoutDistribucionProceso.Size = new System.Drawing.Size(133, 621);
-            this.layoutDistribucionProceso.TabIndex = 1;
+            this.layoutDistribucionColumna4.ColumnCount = 1;
+            this.layoutDistribucionColumna4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.layoutDistribucionColumna4.Controls.Add(this.guna2Separator9, 0, 7);
+            this.layoutDistribucionColumna4.Controls.Add(this.lbInicio, 0, 6);
+            this.layoutDistribucionColumna4.Controls.Add(this.lbRegimenes, 0, 1);
+            this.layoutDistribucionColumna4.Controls.Add(this.guna2Separator8, 0, 2);
+            this.layoutDistribucionColumna4.Controls.Add(this.btnInicio, 0, 9);
+            this.layoutDistribucionColumna4.Controls.Add(this.btnStop, 0, 8);
+            this.layoutDistribucionColumna4.Controls.Add(this.layoutSeñalesRegimenAutomatico, 0, 10);
+            this.layoutDistribucionColumna4.Controls.Add(this.btnManual, 0, 3);
+            this.layoutDistribucionColumna4.Controls.Add(this.btnAutomatico, 0, 4);
+            this.layoutDistribucionColumna4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutDistribucionColumna4.Location = new System.Drawing.Point(1057, 0);
+            this.layoutDistribucionColumna4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 10);
+            this.layoutDistribucionColumna4.Name = "layoutDistribucionColumna4";
+            this.layoutDistribucionColumna4.RowCount = 11;
+            this.layoutDistribucionColumna4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.layoutDistribucionColumna4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.layoutDistribucionColumna4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
+            this.layoutDistribucionColumna4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
+            this.layoutDistribucionColumna4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.layoutDistribucionColumna4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.layoutDistribucionColumna4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.layoutDistribucionColumna4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
+            this.layoutDistribucionColumna4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.layoutDistribucionColumna4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.layoutDistribucionColumna4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.layoutDistribucionColumna4.Size = new System.Drawing.Size(133, 621);
+            this.layoutDistribucionColumna4.TabIndex = 1;
             // 
             // guna2Separator9
             // 
@@ -582,6 +552,51 @@
             this.btnStop.TabIndex = 1;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
+            // layoutSeñalesRegimenAutomatico
+            // 
+            this.layoutSeñalesRegimenAutomatico.ColumnCount = 1;
+            this.layoutSeñalesRegimenAutomatico.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.layoutSeñalesRegimenAutomatico.Controls.Add(this.panelSeñales, 0, 0);
+            this.layoutSeñalesRegimenAutomatico.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutSeñalesRegimenAutomatico.Location = new System.Drawing.Point(0, 385);
+            this.layoutSeñalesRegimenAutomatico.Margin = new System.Windows.Forms.Padding(0);
+            this.layoutSeñalesRegimenAutomatico.Name = "layoutSeñalesRegimenAutomatico";
+            this.layoutSeñalesRegimenAutomatico.RowCount = 1;
+            this.layoutSeñalesRegimenAutomatico.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.layoutSeñalesRegimenAutomatico.Size = new System.Drawing.Size(133, 236);
+            this.layoutSeñalesRegimenAutomatico.TabIndex = 8;
+            // 
+            // panelSeñales
+            // 
+            this.panelSeñales.BorderRadius = 5;
+            this.panelSeñales.Controls.Add(this.subLayoutSeñalesRegimenAutomatico);
+            this.panelSeñales.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSeñales.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.panelSeñales.Location = new System.Drawing.Point(3, 3);
+            this.panelSeñales.Name = "panelSeñales";
+            this.panelSeñales.ShadowDecoration.Parent = this.panelSeñales;
+            this.panelSeñales.Size = new System.Drawing.Size(127, 230);
+            this.panelSeñales.TabIndex = 8;
+            // 
+            // subLayoutSeñalesRegimenAutomatico
+            // 
+            this.subLayoutSeñalesRegimenAutomatico.BackColor = System.Drawing.Color.Transparent;
+            this.subLayoutSeñalesRegimenAutomatico.ColumnCount = 1;
+            this.subLayoutSeñalesRegimenAutomatico.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.subLayoutSeñalesRegimenAutomatico.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.subLayoutSeñalesRegimenAutomatico.Controls.Add(this.indRegimenCalentamiento, 0, 0);
+            this.subLayoutSeñalesRegimenAutomatico.Controls.Add(this.indRegimenSecado, 0, 1);
+            this.subLayoutSeñalesRegimenAutomatico.Controls.Add(this.indRegimenPurga, 0, 2);
+            this.subLayoutSeñalesRegimenAutomatico.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subLayoutSeñalesRegimenAutomatico.Location = new System.Drawing.Point(0, 0);
+            this.subLayoutSeñalesRegimenAutomatico.Name = "subLayoutSeñalesRegimenAutomatico";
+            this.subLayoutSeñalesRegimenAutomatico.RowCount = 3;
+            this.subLayoutSeñalesRegimenAutomatico.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.subLayoutSeñalesRegimenAutomatico.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.subLayoutSeñalesRegimenAutomatico.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.subLayoutSeñalesRegimenAutomatico.Size = new System.Drawing.Size(127, 230);
+            this.subLayoutSeñalesRegimenAutomatico.TabIndex = 8;
+            // 
             // indRegimenCalentamiento
             // 
             this.indRegimenCalentamiento.BorderRadius = 5;
@@ -624,26 +639,72 @@
             this.indRegimenSecado.Size = new System.Drawing.Size(121, 70);
             this.indRegimenSecado.TabIndex = 2;
             // 
-            // indRegimenDrenado
+            // indRegimenPurga
             // 
-            this.indRegimenDrenado.BorderRadius = 5;
-            this.indRegimenDrenado.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(113)))));
-            this.indRegimenDrenado.CheckedState.Parent = this.indRegimenDrenado;
-            this.indRegimenDrenado.CustomImages.Parent = this.indRegimenDrenado;
-            this.indRegimenDrenado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.indRegimenDrenado.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
-            this.indRegimenDrenado.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.indRegimenDrenado.ForeColor = System.Drawing.Color.White;
-            this.indRegimenDrenado.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
-            this.indRegimenDrenado.HoverState.Parent = this.indRegimenDrenado;
-            this.indRegimenDrenado.Image = ((System.Drawing.Image)(resources.GetObject("indRegimenDrenado.Image")));
-            this.indRegimenDrenado.ImageSize = new System.Drawing.Size(80, 80);
-            this.indRegimenDrenado.Location = new System.Drawing.Point(3, 155);
-            this.indRegimenDrenado.Name = "indRegimenDrenado";
-            this.indRegimenDrenado.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
-            this.indRegimenDrenado.ShadowDecoration.Parent = this.indRegimenDrenado;
-            this.indRegimenDrenado.Size = new System.Drawing.Size(121, 72);
-            this.indRegimenDrenado.TabIndex = 10;
+            this.indRegimenPurga.BorderRadius = 5;
+            this.indRegimenPurga.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(113)))));
+            this.indRegimenPurga.CheckedState.Parent = this.indRegimenPurga;
+            this.indRegimenPurga.CustomImages.Parent = this.indRegimenPurga;
+            this.indRegimenPurga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.indRegimenPurga.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.indRegimenPurga.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.indRegimenPurga.ForeColor = System.Drawing.Color.White;
+            this.indRegimenPurga.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.indRegimenPurga.HoverState.Parent = this.indRegimenPurga;
+            this.indRegimenPurga.Image = ((System.Drawing.Image)(resources.GetObject("indRegimenPurga.Image")));
+            this.indRegimenPurga.ImageSize = new System.Drawing.Size(80, 80);
+            this.indRegimenPurga.Location = new System.Drawing.Point(3, 155);
+            this.indRegimenPurga.Name = "indRegimenPurga";
+            this.indRegimenPurga.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.indRegimenPurga.ShadowDecoration.Parent = this.indRegimenPurga;
+            this.indRegimenPurga.Size = new System.Drawing.Size(121, 72);
+            this.indRegimenPurga.TabIndex = 10;
+            // 
+            // btnManual
+            // 
+            this.btnManual.Animated = true;
+            this.btnManual.BorderRadius = 5;
+            this.btnManual.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnManual.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(113)))));
+            this.btnManual.CheckedState.Parent = this.btnManual;
+            this.btnManual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManual.CustomImages.Parent = this.btnManual;
+            this.btnManual.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnManual.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.btnManual.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnManual.ForeColor = System.Drawing.Color.White;
+            this.btnManual.HoverState.Parent = this.btnManual;
+            this.btnManual.Image = ((System.Drawing.Image)(resources.GetObject("btnManual.Image")));
+            this.btnManual.ImageSize = new System.Drawing.Size(80, 80);
+            this.btnManual.Location = new System.Drawing.Point(3, 46);
+            this.btnManual.Name = "btnManual";
+            this.btnManual.ShadowDecoration.Parent = this.btnManual;
+            this.btnManual.Size = new System.Drawing.Size(127, 70);
+            this.btnManual.TabIndex = 13;
+            this.btnManual.Click += new System.EventHandler(this.btnManual_Click);
+            // 
+            // btnAutomatico
+            // 
+            this.btnAutomatico.Animated = true;
+            this.btnAutomatico.BorderRadius = 5;
+            this.btnAutomatico.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnAutomatico.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(113)))));
+            this.btnAutomatico.CheckedState.Parent = this.btnAutomatico;
+            this.btnAutomatico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAutomatico.CustomImages.Parent = this.btnAutomatico;
+            this.btnAutomatico.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAutomatico.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
+            this.btnAutomatico.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAutomatico.ForeColor = System.Drawing.Color.White;
+            this.btnAutomatico.HoverState.Parent = this.btnAutomatico;
+            this.btnAutomatico.Image = ((System.Drawing.Image)(resources.GetObject("btnAutomatico.Image")));
+            this.btnAutomatico.ImageSize = new System.Drawing.Size(80, 80);
+            this.btnAutomatico.Location = new System.Drawing.Point(3, 122);
+            this.btnAutomatico.Name = "btnAutomatico";
+            this.btnAutomatico.ShadowDecoration.Parent = this.btnAutomatico;
+            this.btnAutomatico.Size = new System.Drawing.Size(127, 69);
+            this.btnAutomatico.TabIndex = 14;
+            this.btnAutomatico.Click += new System.EventHandler(this.btnAutomatico_Click);
             // 
             // layoutDistribucionColumna1
             // 
@@ -714,74 +775,44 @@
             this.guna2Separator4.Size = new System.Drawing.Size(190, 5);
             this.guna2Separator4.TabIndex = 10;
             // 
-            // controlHumedad1
+            // layoutDistribucionColumna3
             // 
-            this.controlHumedad1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlHumedad1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.controlHumedad1.Location = new System.Drawing.Point(1, 380);
-            this.controlHumedad1.Margin = new System.Windows.Forms.Padding(1);
-            this.controlHumedad1.MinimumSize = new System.Drawing.Size(200, 230);
-            this.controlHumedad1.Name = "controlHumedad1";
-            this.controlHumedad1.Size = new System.Drawing.Size(200, 240);
-            this.controlHumedad1.TabIndex = 12;
-            this.controlHumedad1.ValorActual = 0F;
-            this.controlHumedad1.ValorMaximo = 100F;
-            this.controlHumedad1.ValorMinimo = 0F;
-            // 
-            // controlVentilador1
-            // 
-            this.controlVentilador1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlVentilador1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.controlVentilador1.Interruptor = false;
-            this.controlVentilador1.Location = new System.Drawing.Point(1, 44);
-            this.controlVentilador1.Margin = new System.Windows.Forms.Padding(1);
-            this.controlVentilador1.MinimumSize = new System.Drawing.Size(200, 260);
-            this.controlVentilador1.Name = "controlVentilador1";
-            this.controlVentilador1.Size = new System.Drawing.Size(200, 260);
-            this.controlVentilador1.TabIndex = 13;
-            this.controlVentilador1.ValorActual = 0F;
-            this.controlVentilador1.ValorMaximo = 100F;
-            this.controlVentilador1.ValorMinimo = 0F;
-            this.controlVentilador1.ValorRealimentacion = 0F;
-            // 
-            // layoutDistribucionVariables
-            // 
-            this.layoutDistribucionVariables.ColumnCount = 1;
-            this.layoutDistribucionVariables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.layoutDistribucionVariables.Controls.Add(this.guna2Separator7, 0, 6);
-            this.layoutDistribucionVariables.Controls.Add(this.layoutEntradaSalidaAire, 0, 7);
-            this.layoutDistribucionVariables.Controls.Add(this.lbPurgaAireHumedo, 0, 5);
-            this.layoutDistribucionVariables.Controls.Add(this.lbCurvaTrabajo, 0, 9);
-            this.layoutDistribucionVariables.Controls.Add(this.guna2Separator3, 0, 10);
-            this.layoutDistribucionVariables.Controls.Add(this.layoutPerfilesDeshidratacion, 0, 11);
-            this.layoutDistribucionVariables.Controls.Add(this.layoutValoresPerfil, 0, 12);
-            this.layoutDistribucionVariables.Controls.Add(this.lbResistencias, 0, 1);
-            this.layoutDistribucionVariables.Controls.Add(this.guna2Separator6, 0, 2);
-            this.layoutDistribucionVariables.Controls.Add(this.layoutResistencias, 0, 3);
-            this.layoutDistribucionVariables.Controls.Add(this.curvaDeshidratacion, 0, 14);
-            this.layoutDistribucionVariables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutDistribucionVariables.Location = new System.Drawing.Point(420, 0);
-            this.layoutDistribucionVariables.Margin = new System.Windows.Forms.Padding(0);
-            this.layoutDistribucionVariables.Name = "layoutDistribucionVariables";
-            this.layoutDistribucionVariables.RowCount = 16;
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.layoutDistribucionVariables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.layoutDistribucionVariables.Size = new System.Drawing.Size(632, 631);
-            this.layoutDistribucionVariables.TabIndex = 2;
+            this.layoutDistribucionColumna3.ColumnCount = 1;
+            this.layoutDistribucionColumna3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.layoutDistribucionColumna3.Controls.Add(this.guna2Separator7, 0, 6);
+            this.layoutDistribucionColumna3.Controls.Add(this.layoutPurgaAireHumedo, 0, 7);
+            this.layoutDistribucionColumna3.Controls.Add(this.lbPurgaAireHumedo, 0, 5);
+            this.layoutDistribucionColumna3.Controls.Add(this.lbCurvaTrabajo, 0, 9);
+            this.layoutDistribucionColumna3.Controls.Add(this.guna2Separator3, 0, 10);
+            this.layoutDistribucionColumna3.Controls.Add(this.layoutPerfilesDeshidratacion, 0, 11);
+            this.layoutDistribucionColumna3.Controls.Add(this.layoutValoresPerfilDeshidratacion, 0, 12);
+            this.layoutDistribucionColumna3.Controls.Add(this.lbResistencias, 0, 1);
+            this.layoutDistribucionColumna3.Controls.Add(this.guna2Separator6, 0, 2);
+            this.layoutDistribucionColumna3.Controls.Add(this.layoutResistencias, 0, 3);
+            this.layoutDistribucionColumna3.Controls.Add(this.curvaDeshidratacion, 0, 14);
+            this.layoutDistribucionColumna3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutDistribucionColumna3.Location = new System.Drawing.Point(420, 0);
+            this.layoutDistribucionColumna3.Margin = new System.Windows.Forms.Padding(0);
+            this.layoutDistribucionColumna3.Name = "layoutDistribucionColumna3";
+            this.layoutDistribucionColumna3.RowCount = 16;
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.layoutDistribucionColumna3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.layoutDistribucionColumna3.Size = new System.Drawing.Size(632, 631);
+            this.layoutDistribucionColumna3.TabIndex = 2;
             // 
             // guna2Separator7
             // 
@@ -792,27 +823,27 @@
             this.guna2Separator7.Size = new System.Drawing.Size(622, 5);
             this.guna2Separator7.TabIndex = 9;
             // 
-            // layoutEntradaSalidaAire
+            // layoutPurgaAireHumedo
             // 
-            this.layoutEntradaSalidaAire.ColumnCount = 4;
-            this.layoutEntradaSalidaAire.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.layoutEntradaSalidaAire.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.layoutEntradaSalidaAire.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.layoutEntradaSalidaAire.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.layoutEntradaSalidaAire.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutEntradaSalidaAire.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutEntradaSalidaAire.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutEntradaSalidaAire.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutEntradaSalidaAire.Controls.Add(this.interruptorActuadores, 0, 0);
-            this.layoutEntradaSalidaAire.Controls.Add(this.lbActuadorExclusa, 1, 0);
-            this.layoutEntradaSalidaAire.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutEntradaSalidaAire.Location = new System.Drawing.Point(5, 139);
-            this.layoutEntradaSalidaAire.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.layoutEntradaSalidaAire.Name = "layoutEntradaSalidaAire";
-            this.layoutEntradaSalidaAire.RowCount = 1;
-            this.layoutEntradaSalidaAire.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.layoutEntradaSalidaAire.Size = new System.Drawing.Size(622, 32);
-            this.layoutEntradaSalidaAire.TabIndex = 13;
+            this.layoutPurgaAireHumedo.ColumnCount = 4;
+            this.layoutPurgaAireHumedo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.layoutPurgaAireHumedo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.layoutPurgaAireHumedo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.layoutPurgaAireHumedo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.layoutPurgaAireHumedo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.layoutPurgaAireHumedo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.layoutPurgaAireHumedo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.layoutPurgaAireHumedo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.layoutPurgaAireHumedo.Controls.Add(this.interruptorActuadores, 0, 0);
+            this.layoutPurgaAireHumedo.Controls.Add(this.lbActuadorExclusa, 1, 0);
+            this.layoutPurgaAireHumedo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutPurgaAireHumedo.Location = new System.Drawing.Point(5, 139);
+            this.layoutPurgaAireHumedo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.layoutPurgaAireHumedo.Name = "layoutPurgaAireHumedo";
+            this.layoutPurgaAireHumedo.RowCount = 1;
+            this.layoutPurgaAireHumedo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.layoutPurgaAireHumedo.Size = new System.Drawing.Size(622, 32);
+            this.layoutPurgaAireHumedo.TabIndex = 13;
             // 
             // interruptorActuadores
             // 
@@ -840,6 +871,7 @@
             this.interruptorActuadores.UncheckedState.InnerBorderRadius = 8;
             this.interruptorActuadores.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.interruptorActuadores.UncheckedState.Parent = this.interruptorActuadores;
+            this.interruptorActuadores.CheckedChanged += new System.EventHandler(this.interruptorActuadores_CheckedChanged);
             // 
             // lbActuadorExclusa
             // 
@@ -895,7 +927,7 @@
             this.layoutPerfilesDeshidratacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.layoutPerfilesDeshidratacion.Controls.Add(this.lbSeleccionPerfil, 0, 0);
             this.layoutPerfilesDeshidratacion.Controls.Add(this.btnCrearPerfil, 2, 0);
-            this.layoutPerfilesDeshidratacion.Controls.Add(this.PerfilesDeshidratacion, 1, 0);
+            this.layoutPerfilesDeshidratacion.Controls.Add(this.cbPerfilesDeshidratacion, 1, 0);
             this.layoutPerfilesDeshidratacion.Controls.Add(this.btnEliminarPerfil, 3, 0);
             this.layoutPerfilesDeshidratacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutPerfilesDeshidratacion.Location = new System.Drawing.Point(0, 235);
@@ -938,26 +970,26 @@
             this.btnCrearPerfil.Text = "Nuevo perfil";
             this.btnCrearPerfil.Click += new System.EventHandler(this.btnCrearPerfil_Click);
             // 
-            // PerfilesDeshidratacion
+            // cbPerfilesDeshidratacion
             // 
-            this.PerfilesDeshidratacion.BackColor = System.Drawing.Color.Transparent;
-            this.PerfilesDeshidratacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PerfilesDeshidratacion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.PerfilesDeshidratacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PerfilesDeshidratacion.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(117)))), ((int)(((byte)(54)))));
-            this.PerfilesDeshidratacion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(117)))), ((int)(((byte)(54)))));
-            this.PerfilesDeshidratacion.FocusedState.Parent = this.PerfilesDeshidratacion;
-            this.PerfilesDeshidratacion.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.PerfilesDeshidratacion.ForeColor = System.Drawing.Color.Black;
-            this.PerfilesDeshidratacion.HoverState.Parent = this.PerfilesDeshidratacion;
-            this.PerfilesDeshidratacion.ItemHeight = 24;
-            this.PerfilesDeshidratacion.ItemsAppearance.Parent = this.PerfilesDeshidratacion;
-            this.PerfilesDeshidratacion.Location = new System.Drawing.Point(183, 3);
-            this.PerfilesDeshidratacion.Name = "PerfilesDeshidratacion";
-            this.PerfilesDeshidratacion.ShadowDecoration.Parent = this.PerfilesDeshidratacion;
-            this.PerfilesDeshidratacion.Size = new System.Drawing.Size(246, 30);
-            this.PerfilesDeshidratacion.TabIndex = 4;
-            this.PerfilesDeshidratacion.SelectedIndexChanged += new System.EventHandler(this.cbPerfilDeshidratacion_SelectedIndexChanged);
+            this.cbPerfilesDeshidratacion.BackColor = System.Drawing.Color.Transparent;
+            this.cbPerfilesDeshidratacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbPerfilesDeshidratacion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbPerfilesDeshidratacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPerfilesDeshidratacion.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(117)))), ((int)(((byte)(54)))));
+            this.cbPerfilesDeshidratacion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(117)))), ((int)(((byte)(54)))));
+            this.cbPerfilesDeshidratacion.FocusedState.Parent = this.cbPerfilesDeshidratacion;
+            this.cbPerfilesDeshidratacion.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.cbPerfilesDeshidratacion.ForeColor = System.Drawing.Color.Black;
+            this.cbPerfilesDeshidratacion.HoverState.Parent = this.cbPerfilesDeshidratacion;
+            this.cbPerfilesDeshidratacion.ItemHeight = 24;
+            this.cbPerfilesDeshidratacion.ItemsAppearance.Parent = this.cbPerfilesDeshidratacion;
+            this.cbPerfilesDeshidratacion.Location = new System.Drawing.Point(183, 3);
+            this.cbPerfilesDeshidratacion.Name = "cbPerfilesDeshidratacion";
+            this.cbPerfilesDeshidratacion.ShadowDecoration.Parent = this.cbPerfilesDeshidratacion;
+            this.cbPerfilesDeshidratacion.Size = new System.Drawing.Size(246, 30);
+            this.cbPerfilesDeshidratacion.TabIndex = 4;
+            this.cbPerfilesDeshidratacion.SelectedIndexChanged += new System.EventHandler(this.cbPerfilDeshidratacion_SelectedIndexChanged);
             // 
             // btnEliminarPerfil
             // 
@@ -980,31 +1012,31 @@
             this.btnEliminarPerfil.TabIndex = 6;
             this.btnEliminarPerfil.Click += new System.EventHandler(this.btnEliminarPerfil_Click);
             // 
-            // layoutValoresPerfil
+            // layoutValoresPerfilDeshidratacion
             // 
-            this.layoutValoresPerfil.ColumnCount = 7;
-            this.layoutValoresPerfil.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
-            this.layoutValoresPerfil.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.layoutValoresPerfil.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.layoutValoresPerfil.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.layoutValoresPerfil.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.layoutValoresPerfil.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.layoutValoresPerfil.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.layoutValoresPerfil.Controls.Add(this.lbGrados, 5, 0);
-            this.layoutValoresPerfil.Controls.Add(this.lbPorciento, 3, 0);
-            this.layoutValoresPerfil.Controls.Add(this.cbEditarValores, 0, 0);
-            this.layoutValoresPerfil.Controls.Add(this.btnModificar, 6, 0);
-            this.layoutValoresPerfil.Controls.Add(this.tbTemperatura, 4, 0);
-            this.layoutValoresPerfil.Controls.Add(this.nudValorRelacion, 1, 0);
-            this.layoutValoresPerfil.Controls.Add(this.tbHumedad, 2, 0);
-            this.layoutValoresPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutValoresPerfil.Location = new System.Drawing.Point(0, 270);
-            this.layoutValoresPerfil.Margin = new System.Windows.Forms.Padding(0);
-            this.layoutValoresPerfil.Name = "layoutValoresPerfil";
-            this.layoutValoresPerfil.RowCount = 1;
-            this.layoutValoresPerfil.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.layoutValoresPerfil.Size = new System.Drawing.Size(632, 35);
-            this.layoutValoresPerfil.TabIndex = 1;
+            this.layoutValoresPerfilDeshidratacion.ColumnCount = 7;
+            this.layoutValoresPerfilDeshidratacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
+            this.layoutValoresPerfilDeshidratacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.layoutValoresPerfilDeshidratacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.layoutValoresPerfilDeshidratacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.layoutValoresPerfilDeshidratacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.layoutValoresPerfilDeshidratacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.layoutValoresPerfilDeshidratacion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.layoutValoresPerfilDeshidratacion.Controls.Add(this.lbGrados, 5, 0);
+            this.layoutValoresPerfilDeshidratacion.Controls.Add(this.lbPorciento, 3, 0);
+            this.layoutValoresPerfilDeshidratacion.Controls.Add(this.cbEditarValores, 0, 0);
+            this.layoutValoresPerfilDeshidratacion.Controls.Add(this.btnModificar, 6, 0);
+            this.layoutValoresPerfilDeshidratacion.Controls.Add(this.tbTemperatura, 4, 0);
+            this.layoutValoresPerfilDeshidratacion.Controls.Add(this.nudValorRelacion, 1, 0);
+            this.layoutValoresPerfilDeshidratacion.Controls.Add(this.tbHumedad, 2, 0);
+            this.layoutValoresPerfilDeshidratacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutValoresPerfilDeshidratacion.Location = new System.Drawing.Point(0, 270);
+            this.layoutValoresPerfilDeshidratacion.Margin = new System.Windows.Forms.Padding(0);
+            this.layoutValoresPerfilDeshidratacion.Name = "layoutValoresPerfilDeshidratacion";
+            this.layoutValoresPerfilDeshidratacion.RowCount = 1;
+            this.layoutValoresPerfilDeshidratacion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.layoutValoresPerfilDeshidratacion.Size = new System.Drawing.Size(632, 35);
+            this.layoutValoresPerfilDeshidratacion.TabIndex = 1;
             // 
             // lbGrados
             // 
@@ -1264,6 +1296,7 @@
             this.interruptorR1R2.UncheckedState.InnerBorderRadius = 8;
             this.interruptorR1R2.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.interruptorR1R2.UncheckedState.Parent = this.interruptorR1R2;
+            this.interruptorR1R2.CheckedChanged += new System.EventHandler(this.interruptorR1R2_CheckedChanged);
             // 
             // interruptorR3R4
             // 
@@ -1291,6 +1324,7 @@
             this.interruptorR3R4.UncheckedState.InnerBorderRadius = 8;
             this.interruptorR3R4.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.interruptorR3R4.UncheckedState.Parent = this.interruptorR3R4;
+            this.interruptorR3R4.CheckedChanged += new System.EventHandler(this.interruptorR3R4_CheckedChanged);
             // 
             // interruptorR5R6
             // 
@@ -1318,6 +1352,7 @@
             this.interruptorR5R6.UncheckedState.InnerBorderRadius = 8;
             this.interruptorR5R6.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.interruptorR5R6.UncheckedState.Parent = this.interruptorR5R6;
+            this.interruptorR5R6.CheckedChanged += new System.EventHandler(this.interruptorR5R6_CheckedChanged);
             // 
             // interruptorR7R8
             // 
@@ -1345,6 +1380,7 @@
             this.interruptorR7R8.UncheckedState.InnerBorderRadius = 8;
             this.interruptorR7R8.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.interruptorR7R8.UncheckedState.Parent = this.interruptorR7R8;
+            this.interruptorR7R8.CheckedChanged += new System.EventHandler(this.interruptorR7R8_CheckedChanged);
             // 
             // lbR1R2
             // 
@@ -1357,39 +1393,6 @@
             this.lbR1R2.TabIndex = 7;
             this.lbR1R2.Text = "R1 | R2";
             this.lbR1R2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // curvaDeshidratacion
-            // 
-            this.curvaDeshidratacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.curvaDeshidratacion.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.curvaDeshidratacion.Location = new System.Drawing.Point(1, 311);
-            this.curvaDeshidratacion.Margin = new System.Windows.Forms.Padding(1);
-            this.curvaDeshidratacion.Name = "curvaDeshidratacion";
-            this.curvaDeshidratacion.Size = new System.Drawing.Size(630, 309);
-            this.curvaDeshidratacion.TabIndex = 14;
-            this.curvaDeshidratacion.ValorHumedad1 = 0F;
-            this.curvaDeshidratacion.ValorHumedad10 = 0F;
-            this.curvaDeshidratacion.ValorHumedad2 = 0F;
-            this.curvaDeshidratacion.ValorHumedad3 = 0F;
-            this.curvaDeshidratacion.ValorHumedad4 = 0F;
-            this.curvaDeshidratacion.ValorHumedad5 = 0F;
-            this.curvaDeshidratacion.ValorHumedad6 = 0F;
-            this.curvaDeshidratacion.ValorHumedad7 = 0F;
-            this.curvaDeshidratacion.ValorHumedad8 = 0F;
-            this.curvaDeshidratacion.ValorHumedad9 = 0F;
-            this.curvaDeshidratacion.ValorHumedadActual = 0F;
-            this.curvaDeshidratacion.ValorSeleccionado = -1;
-            this.curvaDeshidratacion.ValorTemperatura1 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura10 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura2 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura3 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura4 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura5 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura6 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura7 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura8 = 0F;
-            this.curvaDeshidratacion.ValorTemperatura9 = 0F;
-            this.curvaDeshidratacion.ValorTemperaturaActual = 0F;
             // 
             // layoutMenuLateral
             // 
@@ -1437,94 +1440,100 @@
             this._temporizadorActualizacion.Interval = 2000;
             this._temporizadorActualizacion.Tick += new System.EventHandler(this.temporizadorActualizacion_Tick);
             // 
-            // layoutSeñalesRegimenAutomatico
+            // controlTemperatura1
             // 
-            this.layoutSeñalesRegimenAutomatico.ColumnCount = 1;
-            this.layoutSeñalesRegimenAutomatico.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.layoutSeñalesRegimenAutomatico.Controls.Add(this.panelSeñales, 0, 0);
-            this.layoutSeñalesRegimenAutomatico.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutSeñalesRegimenAutomatico.Location = new System.Drawing.Point(0, 385);
-            this.layoutSeñalesRegimenAutomatico.Margin = new System.Windows.Forms.Padding(0);
-            this.layoutSeñalesRegimenAutomatico.Name = "layoutSeñalesRegimenAutomatico";
-            this.layoutSeñalesRegimenAutomatico.RowCount = 1;
-            this.layoutSeñalesRegimenAutomatico.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.layoutSeñalesRegimenAutomatico.Size = new System.Drawing.Size(133, 236);
-            this.layoutSeñalesRegimenAutomatico.TabIndex = 8;
+            this.controlTemperatura1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlTemperatura1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.controlTemperatura1.Location = new System.Drawing.Point(1, 380);
+            this.controlTemperatura1.Margin = new System.Windows.Forms.Padding(1);
+            this.controlTemperatura1.MinimumSize = new System.Drawing.Size(200, 230);
+            this.controlTemperatura1.Name = "controlTemperatura1";
+            this.controlTemperatura1.Size = new System.Drawing.Size(200, 240);
+            this.controlTemperatura1.TabIndex = 13;
+            this.controlTemperatura1.ValorActual = 0F;
+            this.controlTemperatura1.ValorMaximo = 100F;
+            this.controlTemperatura1.ValorMinimo = 0F;
             // 
-            // panelSeñales
+            // controlHumedad1
             // 
-            this.panelSeñales.BorderRadius = 5;
-            this.panelSeñales.Controls.Add(this.subLayoutSeñalesRegimenAutomatico);
-            this.panelSeñales.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSeñales.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
-            this.panelSeñales.Location = new System.Drawing.Point(3, 3);
-            this.panelSeñales.Name = "panelSeñales";
-            this.panelSeñales.ShadowDecoration.Parent = this.panelSeñales;
-            this.panelSeñales.Size = new System.Drawing.Size(127, 230);
-            this.panelSeñales.TabIndex = 8;
+            this.controlHumedad1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlHumedad1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.controlHumedad1.Location = new System.Drawing.Point(1, 380);
+            this.controlHumedad1.Margin = new System.Windows.Forms.Padding(1);
+            this.controlHumedad1.MinimumSize = new System.Drawing.Size(200, 230);
+            this.controlHumedad1.Name = "controlHumedad1";
+            this.controlHumedad1.Size = new System.Drawing.Size(200, 240);
+            this.controlHumedad1.TabIndex = 12;
+            this.controlHumedad1.ValorActual = 0F;
+            this.controlHumedad1.ValorMaximo = 100F;
+            this.controlHumedad1.ValorMinimo = 0F;
             // 
-            // subLayoutSeñalesRegimenAutomatico
+            // curvaDeshidratacion
             // 
-            this.subLayoutSeñalesRegimenAutomatico.BackColor = System.Drawing.Color.Transparent;
-            this.subLayoutSeñalesRegimenAutomatico.ColumnCount = 1;
-            this.subLayoutSeñalesRegimenAutomatico.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.subLayoutSeñalesRegimenAutomatico.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.subLayoutSeñalesRegimenAutomatico.Controls.Add(this.indRegimenCalentamiento, 0, 0);
-            this.subLayoutSeñalesRegimenAutomatico.Controls.Add(this.indRegimenSecado, 0, 1);
-            this.subLayoutSeñalesRegimenAutomatico.Controls.Add(this.indRegimenDrenado, 0, 2);
-            this.subLayoutSeñalesRegimenAutomatico.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.subLayoutSeñalesRegimenAutomatico.Location = new System.Drawing.Point(0, 0);
-            this.subLayoutSeñalesRegimenAutomatico.Name = "subLayoutSeñalesRegimenAutomatico";
-            this.subLayoutSeñalesRegimenAutomatico.RowCount = 3;
-            this.subLayoutSeñalesRegimenAutomatico.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.subLayoutSeñalesRegimenAutomatico.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.subLayoutSeñalesRegimenAutomatico.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.subLayoutSeñalesRegimenAutomatico.Size = new System.Drawing.Size(127, 230);
-            this.subLayoutSeñalesRegimenAutomatico.TabIndex = 8;
+            this.curvaDeshidratacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.curvaDeshidratacion.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.curvaDeshidratacion.Location = new System.Drawing.Point(1, 311);
+            this.curvaDeshidratacion.Margin = new System.Windows.Forms.Padding(1);
+            this.curvaDeshidratacion.Name = "curvaDeshidratacion";
+            this.curvaDeshidratacion.Size = new System.Drawing.Size(630, 309);
+            this.curvaDeshidratacion.TabIndex = 14;
+            this.curvaDeshidratacion.ValorHumedad1 = 0F;
+            this.curvaDeshidratacion.ValorHumedad10 = 0F;
+            this.curvaDeshidratacion.ValorHumedad2 = 0F;
+            this.curvaDeshidratacion.ValorHumedad3 = 0F;
+            this.curvaDeshidratacion.ValorHumedad4 = 0F;
+            this.curvaDeshidratacion.ValorHumedad5 = 0F;
+            this.curvaDeshidratacion.ValorHumedad6 = 0F;
+            this.curvaDeshidratacion.ValorHumedad7 = 0F;
+            this.curvaDeshidratacion.ValorHumedad8 = 0F;
+            this.curvaDeshidratacion.ValorHumedad9 = 0F;
+            this.curvaDeshidratacion.ValorHumedadActual = 0F;
+            this.curvaDeshidratacion.ValorSeleccionado = -1;
+            this.curvaDeshidratacion.ValorTemperatura1 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura10 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura2 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura3 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura4 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura5 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura6 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura7 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura8 = 0F;
+            this.curvaDeshidratacion.ValorTemperatura9 = 0F;
+            this.curvaDeshidratacion.ValorTemperaturaActual = 0F;
             // 
-            // btnManual
+            // controlVentilador2
             // 
-            this.btnManual.Animated = true;
-            this.btnManual.BorderRadius = 5;
-            this.btnManual.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnManual.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(113)))));
-            this.btnManual.CheckedState.Parent = this.btnManual;
-            this.btnManual.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnManual.CustomImages.Parent = this.btnManual;
-            this.btnManual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnManual.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
-            this.btnManual.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnManual.ForeColor = System.Drawing.Color.White;
-            this.btnManual.HoverState.Parent = this.btnManual;
-            this.btnManual.Image = ((System.Drawing.Image)(resources.GetObject("btnManual.Image")));
-            this.btnManual.ImageSize = new System.Drawing.Size(80, 80);
-            this.btnManual.Location = new System.Drawing.Point(3, 46);
-            this.btnManual.Name = "btnManual";
-            this.btnManual.ShadowDecoration.Parent = this.btnManual;
-            this.btnManual.Size = new System.Drawing.Size(127, 70);
-            this.btnManual.TabIndex = 13;
+            this.controlVentilador2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlVentilador2.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.controlVentilador2.Interruptor = false;
+            this.controlVentilador2.Location = new System.Drawing.Point(1, 44);
+            this.controlVentilador2.Margin = new System.Windows.Forms.Padding(1);
+            this.controlVentilador2.MinimumSize = new System.Drawing.Size(200, 260);
+            this.controlVentilador2.Name = "controlVentilador2";
+            this.controlVentilador2.Size = new System.Drawing.Size(200, 260);
+            this.controlVentilador2.TabIndex = 14;
+            this.controlVentilador2.ValorActual = 0F;
+            this.controlVentilador2.ValorMaximo = 100F;
+            this.controlVentilador2.ValorMinimo = 0F;
+            this.controlVentilador2.ValorRealimentacion = 0F;
+            this.controlVentilador2.SwitchStatusChange += new System.EventHandler(this.controlVentilador2_SwitchStatusChange);
             // 
-            // btnAutomatico
+            // controlVentilador1
             // 
-            this.btnAutomatico.Animated = true;
-            this.btnAutomatico.BorderRadius = 5;
-            this.btnAutomatico.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnAutomatico.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(113)))));
-            this.btnAutomatico.CheckedState.Parent = this.btnAutomatico;
-            this.btnAutomatico.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAutomatico.CustomImages.Parent = this.btnAutomatico;
-            this.btnAutomatico.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAutomatico.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(186)))), ((int)(((byte)(171)))));
-            this.btnAutomatico.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAutomatico.ForeColor = System.Drawing.Color.White;
-            this.btnAutomatico.HoverState.Parent = this.btnAutomatico;
-            this.btnAutomatico.Image = ((System.Drawing.Image)(resources.GetObject("btnAutomatico.Image")));
-            this.btnAutomatico.ImageSize = new System.Drawing.Size(80, 80);
-            this.btnAutomatico.Location = new System.Drawing.Point(3, 122);
-            this.btnAutomatico.Name = "btnAutomatico";
-            this.btnAutomatico.ShadowDecoration.Parent = this.btnAutomatico;
-            this.btnAutomatico.Size = new System.Drawing.Size(127, 69);
-            this.btnAutomatico.TabIndex = 14;
+            this.controlVentilador1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlVentilador1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.controlVentilador1.Interruptor = false;
+            this.controlVentilador1.Location = new System.Drawing.Point(1, 44);
+            this.controlVentilador1.Margin = new System.Windows.Forms.Padding(1);
+            this.controlVentilador1.MinimumSize = new System.Drawing.Size(200, 260);
+            this.controlVentilador1.Name = "controlVentilador1";
+            this.controlVentilador1.Size = new System.Drawing.Size(200, 260);
+            this.controlVentilador1.TabIndex = 13;
+            this.controlVentilador1.ValorActual = 0F;
+            this.controlVentilador1.ValorMaximo = 100F;
+            this.controlVentilador1.ValorMinimo = 0F;
+            this.controlVentilador1.ValorRealimentacion = 0F;
+            this.controlVentilador1.SwitchStatusChange += new System.EventHandler(this.controlVentilador1_SwitchStatusChange);
             // 
             // PanelPrincipal
             // 
@@ -1547,19 +1556,19 @@
             this.layoutAplicacion.ResumeLayout(false);
             this.layoutDistribucionComponentes.ResumeLayout(false);
             this.layoutDistribucionColumna2.ResumeLayout(false);
-            this.layoutDistribucionProceso.ResumeLayout(false);
-            this.layoutDistribucionColumna1.ResumeLayout(false);
-            this.layoutDistribucionVariables.ResumeLayout(false);
-            this.layoutEntradaSalidaAire.ResumeLayout(false);
-            this.layoutPerfilesDeshidratacion.ResumeLayout(false);
-            this.layoutValoresPerfil.ResumeLayout(false);
-            this.layoutValoresPerfil.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudValorRelacion)).EndInit();
-            this.layoutResistencias.ResumeLayout(false);
-            this.layoutMenuLateral.ResumeLayout(false);
+            this.layoutDistribucionColumna4.ResumeLayout(false);
             this.layoutSeñalesRegimenAutomatico.ResumeLayout(false);
             this.panelSeñales.ResumeLayout(false);
             this.subLayoutSeñalesRegimenAutomatico.ResumeLayout(false);
+            this.layoutDistribucionColumna1.ResumeLayout(false);
+            this.layoutDistribucionColumna3.ResumeLayout(false);
+            this.layoutPurgaAireHumedo.ResumeLayout(false);
+            this.layoutPerfilesDeshidratacion.ResumeLayout(false);
+            this.layoutValoresPerfilDeshidratacion.ResumeLayout(false);
+            this.layoutValoresPerfilDeshidratacion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudValorRelacion)).EndInit();
+            this.layoutResistencias.ResumeLayout(false);
+            this.layoutMenuLateral.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1581,7 +1590,7 @@
         private System.Windows.Forms.Label lbVentilador2;
         private System.Windows.Forms.Label lbHumedad;
         private System.Windows.Forms.Label lbVentilador1;
-        private System.Windows.Forms.TableLayoutPanel layoutDistribucionVariables;
+        private System.Windows.Forms.TableLayoutPanel layoutDistribucionColumna3;
         private System.Windows.Forms.Label lbCurvaTrabajo;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
@@ -1590,10 +1599,10 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator4;
         private System.Windows.Forms.TableLayoutPanel layoutPerfilesDeshidratacion;
         private System.Windows.Forms.Label lbSeleccionPerfil;
-        private Guna.UI2.WinForms.Guna2ComboBox PerfilesDeshidratacion;
+        private Guna.UI2.WinForms.Guna2ComboBox cbPerfilesDeshidratacion;
         private Guna.UI2.WinForms.Guna2Button btnCrearPerfil;
         private Guna.UI2.WinForms.Guna2CheckBox cbEditarValores;
-        private System.Windows.Forms.TableLayoutPanel layoutValoresPerfil;
+        private System.Windows.Forms.TableLayoutPanel layoutValoresPerfilDeshidratacion;
         private Guna.UI2.WinForms.Guna2NumericUpDown nudValorRelacion;
         private Guna.UI2.WinForms.Guna2TextBox tbHumedad;
         private Guna.UI2.WinForms.Guna2TextBox tbTemperatura;
@@ -1611,10 +1620,10 @@
         private System.Windows.Forms.Label lbR1R2;
         private System.Windows.Forms.Label lbPurgaAireHumedo;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator7;
-        private System.Windows.Forms.TableLayoutPanel layoutEntradaSalidaAire;
+        private System.Windows.Forms.TableLayoutPanel layoutPurgaAireHumedo;
         private Guna.UI2.WinForms.Guna2ToggleSwitch interruptorActuadores;
         private System.Windows.Forms.Label lbActuadorExclusa;
-        private System.Windows.Forms.TableLayoutPanel layoutDistribucionProceso;
+        private System.Windows.Forms.TableLayoutPanel layoutDistribucionColumna4;
         private Guna.UI2.WinForms.Guna2Button btnInicio;
         private Guna.UI2.WinForms.Guna2Button btnStop;
         private Guna.UI2.WinForms.Guna2ControlBox btnMaximizarRestaurar;
@@ -1624,7 +1633,7 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator8;
         private Guna.UI2.WinForms.Guna2Button indRegimenSecado;
         private Guna.UI2.WinForms.Guna2Button indRegimenCalentamiento;
-        private Guna.UI2.WinForms.Guna2Button indRegimenDrenado;
+        private Guna.UI2.WinForms.Guna2Button indRegimenPurga;
         private System.Windows.Forms.Label lbInicio;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator9;
         private Guna.UI2.WinForms.Guna2Button btnPanelModulos;
@@ -1641,12 +1650,12 @@
         private System.Windows.Forms.Timer _temporizadorActualizacion;
         private System.Windows.Forms.Label lbPoolCounter;
         private System.Windows.Forms.Label lbTrama;
-        private CustomComponents.Lib.ControlVentilador controlVentilador2;
-        private CustomComponents.Lib.ControlVentilador controlVentilador1;
         private System.Windows.Forms.TableLayoutPanel layoutSeñalesRegimenAutomatico;
         private Guna.UI2.WinForms.Guna2Panel panelSeñales;
         private System.Windows.Forms.TableLayoutPanel subLayoutSeñalesRegimenAutomatico;
         private Guna.UI2.WinForms.Guna2Button btnManual;
         private Guna.UI2.WinForms.Guna2Button btnAutomatico;
+        private CustomComponents.Lib.ControlVentilador controlVentilador2;
+        private CustomComponents.Lib.ControlVentilador controlVentilador1;
     }
 }

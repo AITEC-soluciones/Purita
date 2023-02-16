@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.IO.Ports;
@@ -14,7 +15,13 @@ namespace Deshidratador.GUI {
         None,
         Nombre,
         Firmware,
-        Datos
+        Configuracion,
+        Datos,
+        Manual,
+        Automatico,
+        Arranque,
+        Parada,
+        Orden
     }
 
     public partial class PanelPrincipal : Form {
@@ -26,6 +33,7 @@ namespace Deshidratador.GUI {
         private int _poolCounter = 0;
         private int _tramaInvalida = 0;
         private int _noTrama = 0;
+        private int _modo = 0;
         private IdTrama _ultimoId = IdTrama.None;
 
         /// <summary>
@@ -92,20 +100,119 @@ namespace Deshidratador.GUI {
             PanelModulo.MostrarPanel(this);
         }
 
-        private void btnInicio_Click(object sender, EventArgs e) {
-
+        /// <summary>
+        ///     Envía los comandos manuales al controlador tras la modificación del bit correspondiente
+        ///     a la acción del componente actual.
+        /// </summary>
+        private void controlVentilador1_SwitchStatusChange(object sender, EventArgs e) {
+            /* Enviar comandos manuales */
+            EnviarComandoOrdenManual();
         }
 
+        /// <summary>
+        ///     Envía los comandos manuales al controlador tras la modificación del bit correspondiente
+        ///     a la acción del componente actual.
+        /// </summary>
+        private void controlVentilador2_SwitchStatusChange(object sender, EventArgs e) {
+            /* Enviar comandos manuales */
+            EnviarComandoOrdenManual();
+        }
+
+        /// <summary>
+        ///     Envía los comandos manuales al controlador tras la modificación del bit correspondiente
+        ///     a la acción del componente actual.
+        /// </summary>
+        private void interruptorR1R2_CheckedChanged(object sender, EventArgs e) {
+            /* Enviar comandos manuales */
+            EnviarComandoOrdenManual();
+        }
+
+        /// <summary>
+        ///     Envía los comandos manuales al controlador tras la modificación del bit correspondiente
+        ///     a la acción del componente actual.
+        /// </summary>
+        private void interruptorR3R4_CheckedChanged(object sender, EventArgs e) {
+            /* Enviar comandos manuales */
+            EnviarComandoOrdenManual();
+        }
+
+        /// <summary>
+        ///     Envía los comandos manuales al controlador tras la modificación del bit correspondiente
+        ///     a la acción del componente actual.
+        /// </summary>
+        private void interruptorR5R6_CheckedChanged(object sender, EventArgs e) {
+            /* Enviar comandos manuales */
+            EnviarComandoOrdenManual();
+        }
+
+        /// <summary>
+        ///     Envía los comandos manuales al controlador tras la modificación del bit correspondiente
+        ///     a la acción del componente actual.
+        /// </summary>
+        private void interruptorR7R8_CheckedChanged(object sender, EventArgs e) {
+            /* Enviar comandos manuales */
+            EnviarComandoOrdenManual();
+        }
+
+        /// <summary>
+        ///     Envía los comandos manuales al controlador tras la modificación del bit correspondiente
+        ///     a la acción del componente actual.
+        /// </summary>
+        private void interruptorActuadores_CheckedChanged(object sender, EventArgs e) {
+            /* Enviar comandos manuales */
+            EnviarComandoOrdenManual();
+        }
+
+        /// <summary>
+        ///     Envía los comandos manuales al controlador tras la modificación del bit correspondiente
+        ///     a la acción del componente actual.
+        /// </summary>
+        private void btnManual_Click(object sender, EventArgs e) {
+            /* Enviar comandos manuales */
+            EnviarComandoOrdenManual();
+        }
+
+        /// <summary>
+        ///     Envía los comandos manuales al controlador tras la modificación del bit correspondiente
+        ///     a la acción del componente actual.
+        /// </summary>
+        private void btnAutomatico_Click(object sender, EventArgs e) {
+            /* Enviar comandos manuales */
+            EnviarComandoOrdenManual();
+        }
+
+        /// <summary>
+        ///     Envía los comandos manuales al controlador tras la modificación del bit correspondiente
+        ///     a la acción del componente actual.
+        /// </summary>
         private void btnStop_Click(object sender, EventArgs e) {
+            /* Modificar el estado Checked del boton inicio */
+            btnInicio.Checked = false;
 
+            /* Enviar comandos estado */
+            _ultimoId = IdTrama.Parada;
+            _controladorComunicacion.WriteLine($"$AITEC{_direccionModulo}P\r");
         }
 
+        /// <summary>
+        ///     Envía los comandos manuales al controlador tras la modificación del bit correspondiente
+        ///     a la acción del componente actual.
+        /// </summary>
+        private void btnInicio_Click(object sender, EventArgs e) {
+            /* Modificar el estado Checked del boton parada */
+            btnStop.Checked = false;
+
+            /* Enviar comandos manuales */
+            _ultimoId = IdTrama.Arranque;
+            _controladorComunicacion.WriteLine($"$AITEC{_direccionModulo}I\r");
+        }
+        
         /// <summary>
         ///     Selecciona un perfil de deshidratación al cambiar el índice de selección en el control correspondiente.
         /// </summary>
         private void cbPerfilDeshidratacion_SelectedIndexChanged(object sender, EventArgs e) {
             /* Obtener el perfil */
-            PerfilSeleccionado = Perfiles.Find(p => p.Nombre.Equals(PerfilesDeshidratacion.SelectedItem.ToString()));
+            PerfilSeleccionado = Perfiles.Find(p => p.Nombre.Equals(cbPerfilesDeshidratacion.SelectedItem.ToString()));
 
             /* Habilitar el botoón de eliminación */
             btnEliminarPerfil.Enabled = PerfilSeleccionado.Nombre != "Predeterminado";
@@ -126,14 +233,14 @@ namespace Deshidratador.GUI {
 
                 /* Adicionar el nuevo perfil */
                 Perfiles.Add(perfil);
-                PerfilesDeshidratacion.Items.Add(panelNuevoPerfil.Nombre ?? throw new NoNullAllowedException("El nombre no puede ser nulo"));
+                cbPerfilesDeshidratacion.Items.Add(panelNuevoPerfil.Nombre ?? throw new NoNullAllowedException("El nombre no puede ser nulo"));
 
                 /* Salvar el perfil */
                 perfil.Salvar();
             }
 
             /* Seleccionar el perfil predeterminado */
-            PerfilesDeshidratacion.SelectedItem = panelNuevoPerfil.Nombre;
+            cbPerfilesDeshidratacion.SelectedItem = panelNuevoPerfil.Nombre;
         }
 
         /// <summary>
@@ -142,11 +249,11 @@ namespace Deshidratador.GUI {
         private void btnEliminarPerfil_Click(object sender, EventArgs e) {
             /* Eliminar perfil de la lista y de archivo */
             PerfilSeleccionado.Eliminar();
-            PerfilesDeshidratacion.Items.Remove(PerfilSeleccionado.Nombre);
+            cbPerfilesDeshidratacion.Items.Remove(PerfilSeleccionado.Nombre);
             Perfiles.Remove(PerfilSeleccionado);
 
             /* Seleccionar el perfil predeterminado */
-            PerfilesDeshidratacion.SelectedItem = "Predeterminado";
+            cbPerfilesDeshidratacion.SelectedItem = "Predeterminado";
         }
 
         /// <summary>
@@ -215,6 +322,11 @@ namespace Deshidratador.GUI {
                 if (_noTrama == 3) {
                     _temporizadorActualizacion.Stop();
                     _noTrama = 0;
+
+                    /* Mostrar el panel de módulos */
+                    Invoke(new Action(() => {
+                        btnPanelModulos_Click(btnPanelModulos, EventArgs.Empty);
+                    }));
 
                     return;
                 } else
@@ -287,7 +399,10 @@ namespace Deshidratador.GUI {
                             var temperatura = float.Parse(datosSplit[1], NumberStyles.Float, CultureInfo.InvariantCulture);
                             var humedad = float.Parse(datosSplit[2], NumberStyles.Float, CultureInfo.InvariantCulture);
                             var bytePerifericos = datosSplit[3];
-                            var byteActivacion = datosSplit[4];
+                            var byteEstado = datosSplit[4];
+
+                            /* Actualización del modo seleccionado */
+                            _modo = byteEstado[7] == '0' ? 1 : byteEstado[7] == '1' ? 2 : 0;
 
                             /* Actualizar elementos de la interfaz */
                             controlTemperatura1.ValorActual = temperatura;
@@ -296,16 +411,39 @@ namespace Deshidratador.GUI {
                             curvaDeshidratacion.ValorHumedadActual = humedad;
 
                             try {
+                                /* Periféricos */
                                 controlVentilador1.Interruptor = bytePerifericos[0] == '1';
                                 controlVentilador1.ValorActual = bytePerifericos[0] == '1' ? 50 : 0;
                                 controlVentilador2.Interruptor = bytePerifericos[1] == '1';
                                 controlVentilador2.ValorActual = bytePerifericos[1] == '1' ? 50 : 0;
-
+                                
                                 Invoke(new Action(() => {
                                     interruptorR1R2.Checked = bytePerifericos[2] == '1';
                                     interruptorR3R4.Checked = bytePerifericos[3] == '1';
                                     interruptorR5R6.Checked = bytePerifericos[4] == '1';
                                     interruptorR7R8.Checked = bytePerifericos[5] == '1';
+                                    interruptorActuadores.Checked = bytePerifericos[6] == '1';
+
+                                    /* Estados */
+                                    indRegimenCalentamiento.Checked = byteEstado[0] == '1';
+                                    indRegimenSecado.Checked = byteEstado[1] == '1';
+                                    indRegimenPurga.Checked = byteEstado[2] == '1';
+                                    btnInicio.FillColor = byteEstado[6] == '1' ? btnInicio.CheckedState.FillColor : Color.FromArgb(183, 186, 171);
+                                    btnStop.FillColor = byteEstado[6] == '0' ? btnStop.CheckedState.FillColor : Color.FromArgb(183, 186, 171);
+                                    btnAutomatico.Checked = byteEstado[7] == '1';
+                                    btnManual.Checked = byteEstado[7] == '0';                                   
+                                   
+                                    /* Habilitación de componentes según el modo */
+                                    btnStop.Enabled = _modo == 2;
+                                    btnInicio.Enabled = _modo == 2;
+                                    btnAutomatico.Enabled = byteEstado[6] == '0';
+                                    btnManual.Enabled = byteEstado[6] == '0';
+                                    layoutPerfilesDeshidratacion.Enabled = _modo == 2 && byteEstado[6] == '0';
+                                    layoutValoresPerfilDeshidratacion.Enabled = _modo == 2 && byteEstado[6] == '0';
+                                    controlVentilador1.Enabled = _modo == 1;
+                                    controlVentilador2.Enabled = _modo == 1;
+                                    layoutResistencias.Enabled = _modo == 1;
+                                    layoutPurgaAireHumedo.Enabled = _modo == 1;
                                 }));                                
                             } catch (Exception) {
                                 throw;
@@ -314,16 +452,22 @@ namespace Deshidratador.GUI {
                             /* Limpiar id de trama */
                             _ultimoId = IdTrama.None;
                             break;
+                        case IdTrama.Orden:
+                        case IdTrama.Arranque:
+                        case IdTrama.Parada:
+                            if (!datos.Contains("OK"))
+                                _tramaInvalida++;
+
+                            /* Limpiar id de trama */
+                            _ultimoId = IdTrama.None;
+                            break;
                         default:
+                            /* Limpiar id de trama */
+                            _ultimoId = IdTrama.None;
                             break;
                     }
-
                 } else {
                     _tramaInvalida++;
-
-                    Invoke(new Action(() => {
-                        lbPoolCounter.Text = $"Pooling data: {_poolCounter}\nInvalid data: {_tramaInvalida}";
-                    }));
 
                     /* Limpiar id de trama */
                     _ultimoId = IdTrama.None;
@@ -362,14 +506,82 @@ namespace Deshidratador.GUI {
         }
 
         /// <summary>
+        ///     Reune los datos necesarios y ejecuta las órdenes manuales correspondientes.
+        /// </summary>
+        private void EnviarComandoOrdenManual() {
+            /* No ejecutar la orden si el controlador no se encuentra en modo manual */
+            if (_modo != 1)
+                return;
+
+            /* Salir si se está efectuando el procesamiento de tramas */
+            if(_ultimoId != IdTrama.None)
+                return;
+
+            _ultimoId = IdTrama.Orden;
+            _controladorComunicacion.WriteLine($"$AITEC{_direccionModulo}O" +
+                $"{(controlVentilador1.Interruptor ? '1' : '0')}" +
+                $"{(controlVentilador2.Interruptor ? '1' : '0')}" +
+                $"{(interruptorR1R2.Checked ? '1' : '0')}" +
+                $"{(interruptorR3R4.Checked ? '1' : '0')}" +
+                $"{(interruptorR5R6.Checked ? '1' : '0')}" +
+                $"{(interruptorR7R8.Checked ? '1' : '0')}" +
+                $"{(interruptorActuadores.Checked ? '1' : '0')}" +
+                $"0" +
+                $"00000000\r");
+        }
+
+        /// <summary>
         ///     Habilita o deshabilita los componentes activos de la interfaz.
         /// </summary>
         /// <param name="habilitar">Indica si deshabilitar o habilitar los componentes correspondientes de la interfaz</param>
         internal void HabilitacionComponentes(bool habilitar) {
+            /* Componentes de la columna 1 */
             layoutDistribucionColumna1.Enabled = habilitar;
+
+            if (!habilitar) {
+                controlVentilador1.ValorActual = 0;
+                controlVentilador1.ValorRealimentacion = 0;
+                controlVentilador1.Interruptor = false;
+                controlHumedad1.ValorActual = 0;
+            }
+            
+            /* Componentes de la columna 2 */
             layoutDistribucionColumna2.Enabled = habilitar;
-            layoutDistribucionVariables.Enabled = habilitar;
-            layoutDistribucionProceso.Enabled = habilitar;
+
+            if (!habilitar) {
+                controlVentilador2.ValorActual = 0;
+                controlVentilador2.ValorRealimentacion = 0;
+                controlVentilador2.Interruptor = false;
+                controlTemperatura1.ValorActual = 0;
+            }
+
+            /* Componentes de la columna 3 */
+            layoutDistribucionColumna3.Enabled = habilitar;
+
+            if (!habilitar) {
+                interruptorR1R2.Checked = false;
+                interruptorR3R4.Checked = false;
+                interruptorR5R6.Checked = false;
+                interruptorR7R8.Checked = false;
+                interruptorActuadores.Checked = false;
+                cbPerfilesDeshidratacion.SelectedIndex = 0;
+                cbEditarValores.Checked = false;
+                curvaDeshidratacion.ValorHumedadActual = 0;
+                curvaDeshidratacion.ValorTemperaturaActual = 0;
+            }
+
+            /* Componentes de la columna 4 */
+            layoutDistribucionColumna4.Enabled = habilitar;
+
+            if (!habilitar) {
+                btnManual.Checked = false;
+                btnAutomatico.Checked = false;
+                btnStop.FillColor = Color.FromArgb(183, 186, 171);
+                btnInicio.FillColor = Color.FromArgb(183, 186, 171);
+                indRegimenCalentamiento.Checked = false;
+                indRegimenSecado.Checked = false;
+                indRegimenPurga.Checked = false;
+            }
         }
 
         /// <summary>
@@ -396,13 +608,13 @@ namespace Deshidratador.GUI {
 
                         /* Adicionar el perfil cargado */
                         Perfiles.Add(perfil);
-                        PerfilesDeshidratacion.Items.Add(nombre ?? throw new NoNullAllowedException("El nombre no puede ser nulo"));
+                        cbPerfilesDeshidratacion.Items.Add(nombre ?? throw new NoNullAllowedException("El nombre no puede ser nulo"));
                     }
                 }
             }
 
             /* Seleccionar el perfil predeterminado */
-            PerfilesDeshidratacion.SelectedItem = "Predeterminado";
+            cbPerfilesDeshidratacion.SelectedItem = "Predeterminado";
         }
 
         /// <summary>
@@ -416,8 +628,8 @@ namespace Deshidratador.GUI {
                 curvaDeshidratacion.SetValorTemperatura(relacion.Temperatura, i);
             }
         }
-
+        
         #endregion
-
+        
     }
 }

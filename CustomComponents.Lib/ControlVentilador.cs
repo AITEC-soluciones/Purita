@@ -36,7 +36,7 @@ namespace CustomComponents.Lib {
             get => interruptorEnable.Checked;
             set {
                 if (InvokeRequired)
-                    Invoke(new Action(() => { SetValorInterruptor(value); }));
+                    Parent.Invoke(new Action(() => { SetValorInterruptor(value); }));
                 else
                     SetValorInterruptor(value);
             }
