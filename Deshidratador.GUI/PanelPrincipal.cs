@@ -526,8 +526,7 @@ namespace Deshidratador.GUI {
                 $"{(interruptorR5R6.Checked ? '1' : '0')}" +
                 $"{(interruptorR7R8.Checked ? '1' : '0')}" +
                 $"{(interruptorActuadores.Checked ? '1' : '0')}" +
-                $"0" +
-                $"00000000\r");
+                $"0\r");
         }
 
         /// <summary>
