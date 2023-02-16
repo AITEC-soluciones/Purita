@@ -24,6 +24,11 @@ namespace CustomComponents.Lib {
             ValorVelocidad = 0;
         }
 
+        /// <summary>
+        /// Evento de cambio de estado del interruptor.
+        /// </summary>
+        public event EventHandler SwitchStatusChange;
+
         [Category("CustomComponents")]
         [DefaultValue(0)]
         [Description("El Valor de habilitación del interruotor. ")]
@@ -235,6 +240,10 @@ namespace CustomComponents.Lib {
             }
 
             g.Flush();
+        }
+
+        private void interruptorEnable_CheckedChanged(object sender, EventArgs e) {
+            SwitchStatusChange?.Invoke(sender, e);
         }
     }
 }

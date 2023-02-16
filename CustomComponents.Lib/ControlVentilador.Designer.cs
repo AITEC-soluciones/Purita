@@ -100,6 +100,7 @@
             this.interruptorEnable.UncheckedState.InnerBorderRadius = 7;
             this.interruptorEnable.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.interruptorEnable.UncheckedState.Parent = this.interruptorEnable;
+            this.interruptorEnable.CheckedChanged += new System.EventHandler(this.interruptorEnable_CheckedChanged);
             // 
             // timerVelocidad
             // 

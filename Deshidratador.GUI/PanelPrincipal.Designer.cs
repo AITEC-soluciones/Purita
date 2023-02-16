@@ -585,6 +585,7 @@
             // indRegimenCalentamiento
             // 
             this.indRegimenCalentamiento.BorderRadius = 5;
+            this.indRegimenCalentamiento.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(113)))));
             this.indRegimenCalentamiento.CheckedState.Parent = this.indRegimenCalentamiento;
             this.indRegimenCalentamiento.CustomImages.Parent = this.indRegimenCalentamiento;
             this.indRegimenCalentamiento.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -605,6 +606,7 @@
             // indRegimenSecado
             // 
             this.indRegimenSecado.BorderRadius = 5;
+            this.indRegimenSecado.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(113)))));
             this.indRegimenSecado.CheckedState.Parent = this.indRegimenSecado;
             this.indRegimenSecado.CustomImages.Parent = this.indRegimenSecado;
             this.indRegimenSecado.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -625,6 +627,7 @@
             // indRegimenDrenado
             // 
             this.indRegimenDrenado.BorderRadius = 5;
+            this.indRegimenDrenado.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(113)))));
             this.indRegimenDrenado.CheckedState.Parent = this.indRegimenDrenado;
             this.indRegimenDrenado.CustomImages.Parent = this.indRegimenDrenado;
             this.indRegimenDrenado.Dock = System.Windows.Forms.DockStyle.Fill;
