@@ -103,10 +103,10 @@
             this.ArrastrePanel = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this._temporizadorActualizacion = new System.Windows.Forms.Timer(this.components);
             this.controlTemperatura1 = new CustomComponents.Lib.ControlTemperatura();
-            this.controlHumedad1 = new CustomComponents.Lib.ControlHumedad();
-            this.curvaDeshidratacion = new CustomComponents.Lib.CurvaDeshidratacion();
             this.controlVentilador2 = new CustomComponents.Lib.ControlVentilador();
+            this.controlHumedad1 = new CustomComponents.Lib.ControlHumedad();
             this.controlVentilador1 = new CustomComponents.Lib.ControlVentilador();
+            this.curvaDeshidratacion = new CustomComponents.Lib.CurvaDeshidratacion();
             this.layoutBase.SuspendLayout();
             this.layoutDistribucionBase.SuspendLayout();
             this.layoutTitulo.SuspendLayout();
@@ -442,11 +442,11 @@
             this.layoutDistribucionColumna4.Controls.Add(this.lbInicio, 0, 6);
             this.layoutDistribucionColumna4.Controls.Add(this.lbRegimenes, 0, 1);
             this.layoutDistribucionColumna4.Controls.Add(this.guna2Separator8, 0, 2);
-            this.layoutDistribucionColumna4.Controls.Add(this.btnInicio, 0, 9);
-            this.layoutDistribucionColumna4.Controls.Add(this.btnStop, 0, 8);
             this.layoutDistribucionColumna4.Controls.Add(this.layoutSeñalesRegimenAutomatico, 0, 10);
             this.layoutDistribucionColumna4.Controls.Add(this.btnManual, 0, 3);
             this.layoutDistribucionColumna4.Controls.Add(this.btnAutomatico, 0, 4);
+            this.layoutDistribucionColumna4.Controls.Add(this.btnStop, 0, 9);
+            this.layoutDistribucionColumna4.Controls.Add(this.btnInicio, 0, 8);
             this.layoutDistribucionColumna4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutDistribucionColumna4.Location = new System.Drawing.Point(1057, 0);
             this.layoutDistribucionColumna4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 10);
@@ -523,7 +523,7 @@
             this.btnInicio.HoverState.Parent = this.btnInicio;
             this.btnInicio.Image = ((System.Drawing.Image)(resources.GetObject("btnInicio.Image")));
             this.btnInicio.ImageSize = new System.Drawing.Size(80, 80);
-            this.btnInicio.Location = new System.Drawing.Point(3, 313);
+            this.btnInicio.Location = new System.Drawing.Point(3, 238);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.ShadowDecoration.Parent = this.btnInicio;
             this.btnInicio.Size = new System.Drawing.Size(127, 69);
@@ -545,7 +545,7 @@
             this.btnStop.HoverState.Parent = this.btnStop;
             this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
             this.btnStop.ImageSize = new System.Drawing.Size(80, 80);
-            this.btnStop.Location = new System.Drawing.Point(3, 238);
+            this.btnStop.Location = new System.Drawing.Point(3, 313);
             this.btnStop.Name = "btnStop";
             this.btnStop.ShadowDecoration.Parent = this.btnStop;
             this.btnStop.Size = new System.Drawing.Size(127, 69);
@@ -1454,6 +1454,23 @@
             this.controlTemperatura1.ValorMaximo = 100F;
             this.controlTemperatura1.ValorMinimo = 0F;
             // 
+            // controlVentilador2
+            // 
+            this.controlVentilador2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlVentilador2.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.controlVentilador2.Interruptor = false;
+            this.controlVentilador2.Location = new System.Drawing.Point(1, 44);
+            this.controlVentilador2.Margin = new System.Windows.Forms.Padding(1);
+            this.controlVentilador2.MinimumSize = new System.Drawing.Size(200, 260);
+            this.controlVentilador2.Name = "controlVentilador2";
+            this.controlVentilador2.Size = new System.Drawing.Size(200, 260);
+            this.controlVentilador2.TabIndex = 14;
+            this.controlVentilador2.ValorActual = 0F;
+            this.controlVentilador2.ValorMaximo = 100F;
+            this.controlVentilador2.ValorMinimo = 0F;
+            this.controlVentilador2.ValorRealimentacion = 0F;
+            this.controlVentilador2.SwitchStatusChange += new System.EventHandler(this.controlVentilador2_SwitchStatusChange);
+            // 
             // controlHumedad1
             // 
             this.controlHumedad1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1467,6 +1484,23 @@
             this.controlHumedad1.ValorActual = 0F;
             this.controlHumedad1.ValorMaximo = 100F;
             this.controlHumedad1.ValorMinimo = 0F;
+            // 
+            // controlVentilador1
+            // 
+            this.controlVentilador1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlVentilador1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.controlVentilador1.Interruptor = false;
+            this.controlVentilador1.Location = new System.Drawing.Point(1, 44);
+            this.controlVentilador1.Margin = new System.Windows.Forms.Padding(1);
+            this.controlVentilador1.MinimumSize = new System.Drawing.Size(200, 260);
+            this.controlVentilador1.Name = "controlVentilador1";
+            this.controlVentilador1.Size = new System.Drawing.Size(200, 260);
+            this.controlVentilador1.TabIndex = 13;
+            this.controlVentilador1.ValorActual = 0F;
+            this.controlVentilador1.ValorMaximo = 100F;
+            this.controlVentilador1.ValorMinimo = 0F;
+            this.controlVentilador1.ValorRealimentacion = 0F;
+            this.controlVentilador1.SwitchStatusChange += new System.EventHandler(this.controlVentilador1_SwitchStatusChange);
             // 
             // curvaDeshidratacion
             // 
@@ -1500,40 +1534,6 @@
             this.curvaDeshidratacion.ValorTemperatura8 = 0F;
             this.curvaDeshidratacion.ValorTemperatura9 = 0F;
             this.curvaDeshidratacion.ValorTemperaturaActual = 0F;
-            // 
-            // controlVentilador2
-            // 
-            this.controlVentilador2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlVentilador2.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.controlVentilador2.Interruptor = false;
-            this.controlVentilador2.Location = new System.Drawing.Point(1, 44);
-            this.controlVentilador2.Margin = new System.Windows.Forms.Padding(1);
-            this.controlVentilador2.MinimumSize = new System.Drawing.Size(200, 260);
-            this.controlVentilador2.Name = "controlVentilador2";
-            this.controlVentilador2.Size = new System.Drawing.Size(200, 260);
-            this.controlVentilador2.TabIndex = 14;
-            this.controlVentilador2.ValorActual = 0F;
-            this.controlVentilador2.ValorMaximo = 100F;
-            this.controlVentilador2.ValorMinimo = 0F;
-            this.controlVentilador2.ValorRealimentacion = 0F;
-            this.controlVentilador2.SwitchStatusChange += new System.EventHandler(this.controlVentilador2_SwitchStatusChange);
-            // 
-            // controlVentilador1
-            // 
-            this.controlVentilador1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlVentilador1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.controlVentilador1.Interruptor = false;
-            this.controlVentilador1.Location = new System.Drawing.Point(1, 44);
-            this.controlVentilador1.Margin = new System.Windows.Forms.Padding(1);
-            this.controlVentilador1.MinimumSize = new System.Drawing.Size(200, 260);
-            this.controlVentilador1.Name = "controlVentilador1";
-            this.controlVentilador1.Size = new System.Drawing.Size(200, 260);
-            this.controlVentilador1.TabIndex = 13;
-            this.controlVentilador1.ValorActual = 0F;
-            this.controlVentilador1.ValorMaximo = 100F;
-            this.controlVentilador1.ValorMinimo = 0F;
-            this.controlVentilador1.ValorRealimentacion = 0F;
-            this.controlVentilador1.SwitchStatusChange += new System.EventHandler(this.controlVentilador1_SwitchStatusChange);
             // 
             // PanelPrincipal
             // 
